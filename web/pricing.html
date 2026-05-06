@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Тарифы — uroki·подписка</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>uroki·подписка</a>
+    <nav class="nav">
+      <a href="catalog.html">Каталог</a>
+      <a href="pricing.html" class="active">Тарифы</a>
+      <a href="faq.html">Вопросы</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="login.html" class="btn ghost sm">Войти</a>
+      <a href="signup.html" class="btn primary sm">7 дней бесплатно</a>
+      <button class="nav-mobile-toggle" aria-label="Меню">меню</button>
+    </div>
+  </div>
+</header>
+
+<section style="padding: 80px 0 32px; text-align: center;">
+  <div class="wrap-narrow">
+    <span class="eyebrow">тарифы</span>
+    <h1 style="margin-top: 12px;">Один доступ ко всему каталогу.</h1>
+    <p class="lead" style="margin: 16px auto 0;">Чем дольше период — тем дешевле в пересчёте на месяц. Отмена в один клик.</p>
+  </div>
+</section>
+
+<section style="padding: 32px 0 80px;">
+  <div class="wrap" style="max-width: 1000px;">
+    <div class="pricing-grid">
+      <div class="plan">
+        <div class="plan-head"><div class="plan-name">Месяц</div></div>
+        <div>
+          <div class="plan-price">590 ₽</div>
+          <div class="plan-unit">в месяц</div>
+        </div>
+        <ul class="feat">
+          <li>Все 42 урока</li>
+          <li>Watermark с email</li>
+          <li>Email с новинками</li>
+          <li>Отмена в любой момент</li>
+        </ul>
+        <a href="signup.html?plan=month" class="btn block">Выбрать</a>
+      </div>
+
+      <div class="plan featured">
+        <div class="plan-head">
+          <div class="plan-name">Год</div>
+          <span class="chip accent">−30%</span>
+        </div>
+        <div>
+          <div class="plan-price" style="color: var(--accent-ink);">4 990 ₽</div>
+          <div class="plan-unit">≈ 416 ₽ в месяц</div>
+        </div>
+        <ul class="feat">
+          <li>Все 42 урока + 6 новых ежемесячно</li>
+          <li>Watermark с email</li>
+          <li>Доступ навсегда после оплаты года</li>
+          <li>Возврат в первые 7 дней</li>
+          <li>Приоритетная поддержка</li>
+        </ul>
+        <a href="signup.html?plan=year" class="btn primary block">Выбрать год</a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-head">
+          <div class="plan-name">Квартал</div>
+          <span class="chip">−16%</span>
+        </div>
+        <div>
+          <div class="plan-price">1 490 ₽</div>
+          <div class="plan-unit">≈ 497 ₽ в месяц</div>
+        </div>
+        <ul class="feat">
+          <li>Все 42 урока</li>
+          <li>Watermark с email</li>
+          <li>Email с новинками</li>
+          <li>Отмена в любой момент</li>
+        </ul>
+        <a href="signup.html?plan=quarter" class="btn block">Выбрать</a>
+      </div>
+    </div>
+    <p class="mono muted" style="text-align: center; font-size: 12px; margin-top: 32px;">
+      7 дней бесплатно · оплата картой РФ · чек на email
+    </p>
+  </div>
+</section>
+
+<!-- Comparison table -->
+<section style="padding: 64px 0; background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="wrap" style="max-width: 880px;">
+    <h2 style="margin-bottom: 32px;">Что входит во все тарифы</h2>
+    <div class="grid grid-2" style="gap: 14px 32px;">
+      <div class="row" style="gap: 12px;"><span style="color: var(--accent); font-weight: 600;">✓</span><span>Все 42 урока в каталоге</span></div>
+      <div class="row" style="gap: 12px;"><span style="color: var(--accent); font-weight: 600;">✓</span><span>6 новых уроков каждый месяц</span></div>
+      <div class="row" style="gap: 12px;"><span style="color: var(--accent); font-weight: 600;">✓</span><span>Презентация PDF + LaTeX-исходник</span></div>
+      <div class="row" style="gap: 12px;"><span style="color: var(--accent); font-weight: 600;">✓</span><span>Рабочий лист A4 + ответы</span></div>
+      <div class="row" style="gap: 12px;"><span style="color: var(--accent); font-weight: 600;">✓</span><span>Невидимый watermark с email</span></div>
+      <div class="row" style="gap: 12px;"><span style="color: var(--accent); font-weight: 600;">✓</span><span>Возврат в первые 7 дней</span></div>
+      <div class="row" style="gap: 12px;"><span style="color: var(--accent); font-weight: 600;">✓</span><span>Email-поддержка в течение суток</span></div>
+      <div class="row" style="gap: 12px;"><span style="color: var(--accent); font-weight: 600;">✓</span><span>Отмена в один клик</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Mini FAQ -->
+<section class="section">
+  <div class="wrap-narrow">
+    <h2 style="margin-bottom: 24px;">Частые вопросы по оплате</h2>
+    <div class="faq-item">
+      <button class="faq-q">Какие способы оплаты <span class="pm">+</span></button>
+      <div class="faq-a"><p>Картой через ЮKassa. Принимаем Visa, Mastercard, Мир. Чек приходит на email.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Можно ли оформить от школы <span class="pm">+</span></button>
+      <div class="faq-a"><p>Да. Напишите на hello@uroki.ru — выставим счёт по реквизитам, пришлём договор и закрывающие документы.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Что если не подошло <span class="pm">+</span></button>
+      <div class="faq-a"><p>Возврат в течение 7 дней с момента оплаты. Деньги вернутся на ту же карту в течение 3–10 рабочих дней.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Можно ли передать подписку коллеге <span class="pm">+</span></button>
+      <div class="faq-a"><p>Подписка персональная. На рабочих листах есть невидимый watermark с email — это для защиты от перепродажи. Если у вас несколько учителей в школе, напишите нам — есть скидка от 3 человек.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div><a href="index.html" class="brand"><span class="dot"></span>uroki·подписка</a><p class="muted" style="font-size:14px; margin-top:14px; max-width:280px;">Готовые уроки математики и информатики для 8–11 классов.</p></div>
+    <div><h4>Сайт</h4><ul><li><a href="catalog.html">Каталог</a></li><li><a href="pricing.html">Тарифы</a></li><li><a href="faq.html">Вопросы</a></li><li><a href="account.html">Кабинет</a></li></ul></div>
+    <div><h4>Документы</h4><ul><li><a href="oferta.html">Оферта</a></li><li><a href="privacy.html">Политика</a></li><li><a href="contacts.html">Контакты</a></li></ul></div>
+    <div><h4>Связь</h4><ul><li><a href="mailto:hello@uroki.ru">hello@uroki.ru</a></li></ul></div>
+    <div class="legal"><span>ИП Иванова И. И. · ИНН 000000000000 · 2026</span><span>uroki-podpiska.ru</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

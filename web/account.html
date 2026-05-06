@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Кабинет — uroki·подписка</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>uroki·подписка</a>
+    <nav class="nav">
+      <a href="catalog.html">Каталог</a>
+      <a href="pricing.html">Тарифы</a>
+      <a href="faq.html">Вопросы</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="mono muted" style="font-size: 13px;">учитель@школа.ру</span>
+      <a href="login.html" class="btn ghost sm">Выйти</a>
+    </div>
+  </div>
+</header>
+
+<section style="padding: 48px 0 24px;">
+  <div class="wrap">
+    <span class="eyebrow">кабинет</span>
+    <h1 style="margin-top: 8px; font-size: 40px;">Здравствуйте, Анна.</h1>
+  </div>
+</section>
+
+<section style="padding: 24px 0 96px;">
+  <div class="wrap">
+    <div class="account-layout">
+      <aside class="side-nav">
+        <a href="#lessons" class="active">Мои уроки <span class="mono muted" style="font-size: 12px;">14</span></a>
+        <a href="#subscription">Подписка</a>
+        <a href="#settings">Настройки</a>
+        <div style="margin: 24px 0 0; padding-top: 20px; border-top: 1px solid var(--line);">
+          <div class="card-tight" style="background: var(--accent-soft); border: none; padding: 14px 16px;">
+            <div class="mono" style="font-size: 11px; color: var(--accent-ink);">подписка активна</div>
+            <div style="font-size: 15px; margin-top: 4px;">до 12 мая 2026</div>
+            <div class="mono muted" style="font-size: 11px; margin-top: 4px;">год · 4 990 ₽</div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="col" style="gap: 56px;">
+        <!-- Lessons -->
+        <div id="lessons">
+          <div class="row-between" style="margin-bottom: 24px; align-items: baseline;">
+            <h2 style="font-size: 28px;">Мои уроки</h2>
+            <span class="mono muted" style="font-size: 13px;">14 скачанных</span>
+          </div>
+          <div class="card" style="padding: 0;">
+            <table class="table">
+              <thead><tr><th></th><th>Урок</th><th>Класс · предмет</th><th>Скачан</th><th></th></tr></thead>
+              <tbody>
+                <tr><td style="width: 56px;"><div class="slide-preview" style="width: 48px; aspect-ratio: 4/3;"><div class="sp-inner" style="padding: 4px;"><div class="sp-eyebrow mono" style="font-size: 6px;">8</div></div></div></td>
+                  <td><a href="lesson.html" style="font-weight: 500;">Теорема Виета</a></td><td class="muted">8 класс · алгебра</td><td class="mono muted" style="font-size: 13px;">3 апр</td>
+                  <td><a href="#" class="mono" style="font-size: 13px;">скачать ↓</a></td></tr>
+                <tr><td><div class="slide-preview" style="width: 48px; aspect-ratio: 4/3;"><div class="sp-inner" style="padding: 4px; background: var(--bg-soft);"><div class="sp-eyebrow mono" style="font-size: 6px;">10</div></div></div></td>
+                  <td><a href="lesson.html" style="font-weight: 500;">Производная функции</a></td><td class="muted">10 класс · алгебра</td><td class="mono muted" style="font-size: 13px;">29 мар</td>
+                  <td><a href="#" class="mono" style="font-size: 13px;">скачать ↓</a></td></tr>
+                <tr><td><div class="slide-preview" style="width: 48px; aspect-ratio: 4/3;"><div class="sp-inner" style="padding: 4px;"><div class="sp-eyebrow mono" style="font-size: 6px;">9</div></div></div></td>
+                  <td><a href="lesson.html" style="font-weight: 500;">Циклы while</a></td><td class="muted">9 класс · информатика</td><td class="mono muted" style="font-size: 13px;">24 мар</td>
+                  <td><a href="#" class="mono" style="font-size: 13px;">скачать ↓</a></td></tr>
+                <tr><td><div class="slide-preview" style="width: 48px; aspect-ratio: 4/3;"><div class="sp-inner" style="padding: 4px;"><div class="sp-eyebrow mono" style="font-size: 6px;">11</div></div></div></td>
+                  <td><a href="lesson.html" style="font-weight: 500;">Логарифмическое уравнение</a></td><td class="muted">11 класс · алгебра</td><td class="mono muted" style="font-size: 13px;">21 мар</td>
+                  <td><a href="#" class="mono" style="font-size: 13px;">скачать ↓</a></td></tr>
+                <tr><td><div class="slide-preview" style="width: 48px; aspect-ratio: 4/3;"><div class="sp-inner" style="padding: 4px; background: var(--bg-soft);"><div class="sp-eyebrow mono" style="font-size: 6px;">10</div></div></div></td>
+                  <td><a href="lesson.html" style="font-weight: 500;">Массивы. Сортировка</a></td><td class="muted">10 класс · информатика</td><td class="mono muted" style="font-size: 13px;">15 мар</td>
+                  <td><a href="#" class="mono" style="font-size: 13px;">скачать ↓</a></td></tr>
+                <tr><td><div class="slide-preview" style="width: 48px; aspect-ratio: 4/3;"><div class="sp-inner" style="padding: 4px;"><div class="sp-eyebrow mono" style="font-size: 6px;">8</div></div></div></td>
+                  <td><a href="lesson.html" style="font-weight: 500;">Квадратное уравнение</a></td><td class="muted">8 класс · алгебра</td><td class="mono muted" style="font-size: 13px;">12 мар</td>
+                  <td><a href="#" class="mono" style="font-size: 13px;">скачать ↓</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Subscription -->
+        <div id="subscription">
+          <h2 style="font-size: 28px; margin-bottom: 24px;">Подписка</h2>
+          <div class="card">
+            <div class="row-between" style="align-items: flex-start;">
+              <div>
+                <div class="chip accent">активна</div>
+                <h3 style="margin-top: 12px;">Год · 4 990 ₽</h3>
+                <p class="muted" style="margin-top: 6px;">Следующее списание: 12 мая 2026</p>
+              </div>
+              <div class="row" style="gap: 10px;">
+                <a href="pricing.html" class="btn">Изменить тариф</a>
+                <a href="#" class="btn ghost">Отменить</a>
+              </div>
+            </div>
+            <hr class="divider" style="margin: 24px 0;">
+            <div class="row" style="gap: 32px;">
+              <div><div class="mono muted" style="font-size: 11px;">метод оплаты</div><div style="margin-top: 4px;">Visa · 4242</div></div>
+              <div><div class="mono muted" style="font-size: 11px;">оплачено уроков</div><div style="margin-top: 4px;">42 / 42</div></div>
+              <div><div class="mono muted" style="font-size: 11px;">сертификат</div><div style="margin-top: 4px;"><a href="#" class="mono" style="font-size: 13px;">№ 02-1234 ↓</a></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings -->
+        <div id="settings">
+          <h2 style="font-size: 28px; margin-bottom: 24px;">Настройки</h2>
+          <div class="card">
+            <div class="col" style="gap: 20px;">
+              <div class="row-between"><div><div style="font-weight: 500;">Email</div><div class="muted" style="font-size: 14px;">учитель@школа.ру</div></div><a href="#" class="mono" style="font-size: 13px;">изменить</a></div>
+              <hr class="divider">
+              <div class="row-between"><div><div style="font-weight: 500;">Уведомления о новинках</div><div class="muted" style="font-size: 14px;">раз в неделю по понедельникам</div></div><div class="toggle on"></div></div>
+              <hr class="divider">
+              <div class="row-between"><div><div style="font-weight: 500;">Watermark на рабочих листах</div><div class="muted" style="font-size: 14px;">невидимый, с вашим email</div></div><div class="toggle on"></div></div>
+              <hr class="divider">
+              <div class="row-between"><div><div style="font-weight: 500;">Имя на сертификатах</div><div class="muted" style="font-size: 14px;">Иванова Анна Петровна</div></div><a href="#" class="mono" style="font-size: 13px;">изменить</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div><a href="index.html" class="brand"><span class="dot"></span>uroki·подписка</a><p class="muted" style="font-size:14px; margin-top:14px; max-width:280px;">Готовые уроки математики и информатики для 8–11 классов.</p></div>
+    <div><h4>Сайт</h4><ul><li><a href="catalog.html">Каталог</a></li><li><a href="pricing.html">Тарифы</a></li><li><a href="faq.html">Вопросы</a></li><li><a href="account.html">Кабинет</a></li></ul></div>
+    <div><h4>Документы</h4><ul><li><a href="oferta.html">Оферта</a></li><li><a href="privacy.html">Политика</a></li><li><a href="contacts.html">Контакты</a></li></ul></div>
+    <div><h4>Связь</h4><ul><li><a href="mailto:hello@uroki.ru">hello@uroki.ru</a></li></ul></div>
+    <div class="legal"><span>ИП Иванова И. И. · ИНН 000000000000 · 2026</span><span>uroki-podpiska.ru</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
