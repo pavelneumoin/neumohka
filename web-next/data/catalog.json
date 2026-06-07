@@ -1,0 +1,1292 @@
+{
+  "generatedAt": "2026-05-10T13:35:14.967Z",
+  "sections": [
+    {
+      "slug": "algebra-10",
+      "title": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "lessonCount": 14
+    },
+    {
+      "slug": "geometry-10",
+      "title": "Геометрия, 10 класс",
+      "subject": "geometry",
+      "grade": 10,
+      "exam": null,
+      "lessonCount": 1
+    },
+    {
+      "slug": "informatics-10",
+      "title": "Информатика, 10 класс",
+      "subject": "informatics",
+      "grade": 10,
+      "exam": null,
+      "lessonCount": 1
+    },
+    {
+      "slug": "informatics-ege",
+      "title": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "lessonCount": 30
+    },
+    {
+      "slug": "math-ege",
+      "title": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "lessonCount": 8
+    },
+    {
+      "slug": "math-oge",
+      "title": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "lessonCount": 8
+    }
+  ],
+  "lessons": [
+    {
+      "slug": "algebra-10-arktangens-i-arkkotangens",
+      "title": "Арктангенс и арккотангенс",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/algebra-10-arktangens-i-arkkotangens/presentation.pdf",
+        "worksheet": "/library/algebra-10-arktangens-i-arkkotangens/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/algebra-10-arktangens-i-arkkotangens/preview.png"
+      },
+      "description": "🔥 НОВЫЙ УРОК: АРКТАНГЕНС И АРККАТАНГЕНС 🔥\r\n\r\nПодготовил для вас и ваших учеников свежий материал! \r\nОтличная структура для проведения полноценного занятия.\r\n\r\nВ открытом доступе делюсь:\r\n✅ Дидактическим рабочим листом (задачи без ответов)\r\n✅ Шпаргалкой со всеми формулами по теме\r\n\r\n👇 Скачивайте PDF прямо под этим постом!\r\n\r\n👑 Полный комплект урока:\r\nЕсли вы хотите сэкономить время, забирайте полную **Презентацию (со всей теорией)** и **Рабочий лист с ключами** в моем закрытом канале для Донов. \r\n🔗 Ссылка на подписку: [Ссылка_на_Donut]\r\n\r\n#алгебра #урок #рабочий_лист #математика",
+      "free": true
+    },
+    {
+      "slug": "algebra-10-grafik-arktangensa-i-arkkotangensa",
+      "title": "График арктангенса и арккотангенса",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/algebra-10-grafik-arktangensa-i-arkkotangensa/presentation.pdf",
+        "worksheet": "/library/algebra-10-grafik-arktangensa-i-arkkotangensa/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/algebra-10-grafik-arktangensa-i-arkkotangensa/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-grafik-funkcii-ycosx",
+      "title": "График функции y=cosx",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [
+        "10_1. График функции y=cosx"
+      ],
+      "files": {
+        "presentation": "/library/algebra-10-grafik-funkcii-ycosx/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/algebra-10-grafik-funkcii-ycosx/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-grafik-funkcii-ycosx-latex",
+      "title": "График функции y=cosx (LaTeX)",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/algebra-10-grafik-funkcii-ycosx-latex/presentation.pdf",
+        "worksheet": "/library/algebra-10-grafik-funkcii-ycosx-latex/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/algebra-10-grafik-funkcii-ycosx-latex/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-grafik-funkcii-ytgx",
+      "title": "График функции y=tgx",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [
+        "10.2. График функции y=tgx"
+      ],
+      "files": {
+        "presentation": "/library/algebra-10-grafik-funkcii-ytgx/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/algebra-10-grafik-funkcii-ytgx/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-prosteyshie-trigonometricheskie-uravneniya",
+      "title": "Простейшие тригонометрические уравнения",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [
+        "11. Простейшие тригонометрические уравнения"
+      ],
+      "files": {
+        "presentation": "/library/algebra-10-prosteyshie-trigonometricheskie-uravneniya/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/algebra-10-prosteyshie-trigonometricheskie-uravneniya/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-reshenie-uravneniy-chast-2",
+      "title": "Решение уравнений. Часть 2",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/algebra-10-reshenie-uravneniy-chast-2/presentation.pdf",
+        "worksheet": "/library/algebra-10-reshenie-uravneniy-chast-2/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/algebra-10-reshenie-uravneniy-chast-2/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-reshenie-uravneniy-chast-3",
+      "title": "Решение уравнений. Часть 3",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/algebra-10-reshenie-uravneniy-chast-3/presentation.pdf",
+        "worksheet": "/library/algebra-10-reshenie-uravneniy-chast-3/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/algebra-10-reshenie-uravneniy-chast-3/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-svoystva-tangensa-i-kotangensa",
+      "title": "Свойства тангенса и котангенса",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [
+        "7. Свойства тангенса и котангенса"
+      ],
+      "files": {
+        "presentation": "/library/algebra-10-svoystva-tangensa-i-kotangensa/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/algebra-10-svoystva-tangensa-i-kotangensa/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-svoystva-tangensa-i-kotangensa-chast-2",
+      "title": "Свойства тангенса и котангенса. Часть 2",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [
+        "8. Свойства тангенса и котангенса. Часть 2"
+      ],
+      "files": {
+        "presentation": "/library/algebra-10-svoystva-tangensa-i-kotangensa-chast-2/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/algebra-10-svoystva-tangensa-i-kotangensa-chast-2/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-sr-svoystva-sinusa-i-kosinusa",
+      "title": "СР. Свойства синуса и косинуса",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/algebra-10-sr-svoystva-sinusa-i-kosinusa/presentation.pdf",
+        "worksheet": "/library/algebra-10-sr-svoystva-sinusa-i-kosinusa/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/algebra-10-sr-svoystva-sinusa-i-kosinusa/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-tangens-i-kotangens",
+      "title": "Тангенс и котангенс",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/algebra-10-tangens-i-kotangens/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/algebra-10-tangens-i-kotangens/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-trigonometricheskie-tozhdestva",
+      "title": "Тригонометрические тождества",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [
+        "9. Тригонометрические тождества"
+      ],
+      "files": {
+        "presentation": "/library/algebra-10-trigonometricheskie-tozhdestva/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/algebra-10-trigonometricheskie-tozhdestva/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "algebra-10-formuly-privedeniya",
+      "title": "Формулы Приведения",
+      "section": "algebra-10",
+      "sectionTitle": "Алгебра, 10 класс",
+      "subject": "algebra",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/algebra-10-formuly-privedeniya/presentation.pdf",
+        "worksheet": "/library/algebra-10-formuly-privedeniya/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/algebra-10-formuly-privedeniya/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi",
+      "title": "Угол между прямыми(готовые чертежи)",
+      "section": "geometry-10",
+      "sectionTitle": "Геометрия, 10 класс",
+      "subject": "geometry",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi/presentation.pdf",
+        "worksheet": "/library/geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-10-cikl-for",
+      "title": "Цикл For",
+      "section": "informatics-10",
+      "sectionTitle": "Информатика, 10 класс",
+      "subject": "informatics",
+      "grade": 10,
+      "exam": null,
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/informatics-10-cikl-for/presentation.pdf",
+        "worksheet": "/library/informatics-10-cikl-for/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-10-cikl-for/preview.png"
+      },
+      "description": "🔥 НОВЫЙ УРОК: ЦИКЛ FOR В PYTHON 🔥\r\n\r\nПодготовил для вас и ваших учеников свежий материал! \r\nОтличная структура для проведения полноценного занятия.\r\n\r\nВ открытом доступе делюсь:\r\n✅ Дидактическим рабочим листом (задачи без ответов)\r\n✅ Шпаргалкой со всеми формулами по теме\r\n\r\n👇 Скачивайте PDF прямо под этим постом!\r\n\r\n👑 Полный комплект урока:\r\nЕсли вы хотите сэкономить время, забирайте полную **Презентацию (со всей теорией)** и **Рабочий лист с ключами** в моем закрытом канале для Донов. \r\n🔗 Ссылка на подписку: [Ссылка_на_Donut]\r\n\r\n#алгебра #урок #рабочий_лист #математика",
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-1-zadanie-ege-informatika",
+      "title": "1 задание ЕГЭ. Информатика",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/informatics-ege-1-zadanie-ege-informatika/presentation.pdf",
+        "worksheet": "/library/informatics-ege-1-zadanie-ege-informatika/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-1-zadanie-ege-informatika/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie",
+      "title": "11 задание ЕГЭ. Информатика · Итоговое повторение",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "11 задание ЕГЭ. Информатика",
+        "11 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie",
+      "title": "13 задание ЕГЭ. Информатика · Итоговое повторение",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "13 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-13-zadanie-ege-informatika-fipi",
+      "title": "13 задание ЕГЭ. Информатика · ФИПИ",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "13 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-13-zadanie-ege-informatika-fipi/presentation.pdf",
+        "worksheet": "/library/informatics-ege-13-zadanie-ege-informatika-fipi/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-13-zadanie-ege-informatika-fipi/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie",
+      "title": "14 задание ЕГЭ. Информатика · Итоговое закрепление",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "14 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-15-zadanie-ege-informatika-ege-15-segments-presentation",
+      "title": "15 задание ЕГЭ. Информатика · EGE_15_Segments_Presentation",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "15 задание ЕГЭ. Информатика",
+        "2 тип задач"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-15-zadanie-ege-informatika-ege-15-segments-presentation/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-15-zadanie-ege-informatika-ege-15-segments-presentation/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie",
+      "title": "16 задание ЕГЭ. Информатика · Итоговое повторение",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "16 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie",
+      "title": "2 задание ЕГЭ. Информатика · 2 задание ЕГЭ. Итоговое повторение",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "2 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie",
+      "title": "23 задание ЕГЭ. Информатика · Итоговое повторение",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "23 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-4-zadanie-ege-informatika-1-urok",
+      "title": "4 задание ЕГЭ. Информатика · 1 Урок",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "4 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-4-zadanie-ege-informatika-1-urok/presentation.pdf",
+        "worksheet": "/library/informatics-ege-4-zadanie-ege-informatika-1-urok/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-4-zadanie-ege-informatika-1-urok/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-4-zadanie-ege-informatika-2-urok",
+      "title": "4 задание ЕГЭ. Информатика · 2 Урок",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "4 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-4-zadanie-ege-informatika-2-urok/presentation.pdf",
+        "worksheet": "/library/informatics-ege-4-zadanie-ege-informatika-2-urok/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-4-zadanie-ege-informatika-2-urok/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie",
+      "title": "4 задание ЕГЭ. Информатика · 3 Урок. Итоговое повторение",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "4 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-5-zadanie-ege-informatika-5-zadanie-ege-itogovoe-povtorenie",
+      "title": "5 задание ЕГЭ. Информатика · 5 задание ЕГЭ. Итоговое повторение",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "5 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-5-zadanie-ege-informatika-5-zadanie-ege-itogovoe-povtorenie/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-5-zadanie-ege-informatika-5-zadanie-ege-itogovoe-povtorenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-7-zadanie-ege-itogovoe-povtorenie",
+      "title": "7 задание ЕГЭ. Итоговое повторение",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/informatics-ege-7-zadanie-ege-itogovoe-povtorenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-7-zadanie-ege-itogovoe-povtorenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-7-zadanie-ege-itogovoe-povtorenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie",
+      "title": "8 задание ЕГЭ. Информатика · 8 задание ЕГЭ. Итоговое закрепление",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "8 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie/presentation.pdf",
+        "worksheet": "/library/informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya",
+      "title": "8 задание ЕГЭ. Информатика · Задание_Презентация",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "8 задание ЕГЭ. Информатика"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya/presentation.pdf",
+        "worksheet": "/library/informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-9-zadanie-ege-informatika",
+      "title": "9 задание ЕГЭ. Информатика",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/informatics-ege-9-zadanie-ege-informatika/presentation.pdf",
+        "worksheet": "/library/informatics-ege-9-zadanie-ege-informatika/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-9-zadanie-ege-informatika/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Задание 23 ЕГЭ",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege/presentation.pdf",
+        "worksheet": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Задание 7 ЕГЭ",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege/presentation.pdf",
+        "worksheet": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Задание 8 ЕГЭ",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege/presentation.pdf",
+        "worksheet": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок 1",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 11 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-maski",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок 1 Маски",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 25 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-maski/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-maski/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок 2",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 11 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-deliteli",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок 2 Делители",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 25 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-deliteli/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-deliteli/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-3-deliteli",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок 3 Делители",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 25 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-3-deliteli/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-3-deliteli/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-4-deliteli",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок 4 Делители",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 25 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-4-deliteli/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-4-deliteli/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-5-deliteli",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок 5 Делители",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 25 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-5-deliteli/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-5-deliteli/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-6-deliteli",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок 6 Делители",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 25 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-6-deliteli/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-6-deliteli/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-otrezki",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок_1_Отрезки",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 17 ЕГЭ",
+        "Урок_1_Отрезки"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-otrezki/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-otrezki/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-2",
+      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок_2",
+      "section": "informatics-ege",
+      "sectionTitle": "Информатика, ЕГЭ",
+      "subject": "informatics",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Финальная подготовка к ЕГЭ(ФИПИ)",
+        "Задание 17 ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-2/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-2/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1",
+      "title": "12 задание ЕГЭ. Математика · 12 задание ЕГЭ. Математика. Финал часть 1",
+      "section": "math-ege",
+      "sectionTitle": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "12 задание ЕГЭ. Математика"
+      ],
+      "files": {
+        "presentation": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1/presentation.pdf",
+        "worksheet": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1/preview.png"
+      },
+      "description": "🔥 НОВЫЙ УРОК: ЗАДАНИЕ 12 ЕГЭ. АНАЛИЗ ФУНКЦИЙ 🔥\r\n\r\nПодготовил для вас и ваших учеников свежий материал! \r\nОтличная структура для проведения полноценного занятия.\r\n\r\nВ открытом доступе делюсь:\r\n✅ Дидактическим рабочим листом (задачи без ответов)\r\n✅ Шпаргалкой со всеми формулами по теме\r\n\r\n👇 Скачивайте PDF прямо под этим постом!\r\n\r\n👑 Полный комплект урока:\r\nЕсли вы хотите сэкономить время, забирайте полную **Презентацию (со всей теорией)** и **Рабочий лист с ключами** в моем закрытом канале для Донов. \r\n🔗 Ссылка на подписку: [Ссылка_на_Donut]\r\n\r\n#алгебра #урок #рабочий_лист #математика",
+      "free": true
+    },
+    {
+      "slug": "math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2",
+      "title": "12 задание ЕГЭ. Математика · 12 задание ЕГЭ. Математика. Финал часть 2",
+      "section": "math-ege",
+      "sectionTitle": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "12 задание ЕГЭ. Математика"
+      ],
+      "files": {
+        "presentation": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2/presentation.pdf",
+        "worksheet": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2/preview.png"
+      },
+      "description": "🔥 НОВЫЙ УРОК: ЗАДАНИЕ 12 ЕГЭ. ФИНАЛ. ЧАСТЬ 2 🔥\n\nПодготовил для вас и ваших учеников свежий материал по самым сложным типам функций!\n\nВ этом уроке разбираем 11 задач:\n✅ Произведения с e^x\n✅ Логарифмические функции\n✅ Иррациональные и тригонометрические функции\n✅ Показательные функции на отрезке\n\nВ открытом доступе делюсь:\n📄 Дидактическим рабочим листом (задачи без ответов, 11 задач на 5 листах)\n📌 Шпаргалкой — весь алгоритм, все трюки, производные, ответы\n\n👇 Скачивайте PDF прямо под этим постом!\n\n👑 Полный комплект урока:\nХотите сэкономить время? Забирайте полную Презентацию (29 слайдов с решениями и таблицами знаков) и Рабочий лист с ключами в моем закрытом канале.\n🔗 Ссылка на подписку: [Ссылка_на_Donut]\n\n#ЕГЭ #математика #задание12 #производная #функции #рабочий_лист",
+      "free": true
+    },
+    {
+      "slug": "math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami",
+      "title": "14 задание ЕГЭ. Математика · Угол между плоскостями",
+      "section": "math-ege",
+      "sectionTitle": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "14 задание ЕГЭ. Математика"
+      ],
+      "files": {
+        "presentation": "/library/math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami/presentation.pdf",
+        "worksheet": "/library/math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-ege-15-zadanie-ege-matematika-zadanie-ege",
+      "title": "15 задание ЕГЭ. Математика · задание_егэ",
+      "section": "math-ege",
+      "sectionTitle": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "15 задание ЕГЭ. Математика"
+      ],
+      "files": {
+        "presentation": "/library/math-ege-15-zadanie-ege-matematika-zadanie-ege/presentation.pdf",
+        "worksheet": "/library/math-ege-15-zadanie-ege-matematika-zadanie-ege/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-ege-15-zadanie-ege-matematika-zadanie-ege/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast",
+      "title": "15 задание ЕГЭ. Математика · Показательные неравенаства. 1 часть",
+      "section": "math-ege",
+      "sectionTitle": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "15 задание ЕГЭ. Математика"
+      ],
+      "files": {
+        "presentation": "/library/math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast/presentation.pdf",
+        "worksheet": "/library/math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-ege-19-zadanie-ege",
+      "title": "19 задание ЕГЭ",
+      "section": "math-ege",
+      "sectionTitle": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [],
+      "files": {
+        "presentation": "/library/math-ege-19-zadanie-ege/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/math-ege-19-zadanie-ege/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom",
+      "title": "Учусь_онлайн. 18 задание ЕГЭ · Квадратные неравенства с параметром",
+      "section": "math-ege",
+      "sectionTitle": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Учусь_онлайн. 18 задание ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom/presentation.pdf",
+        "worksheet": "/library/math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom",
+      "title": "Учусь_онлайн. 18 задание ЕГЭ · Системы уравнений с параметром",
+      "section": "math-ege",
+      "sectionTitle": "Математика, ЕГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "ege",
+      "breadcrumbs": [
+        "Учусь_онлайн. 18 задание ЕГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom/presentation.pdf",
+        "worksheet": "/library/math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-oge-algebra-oge-1-urok",
+      "title": "Алгебра ОГЭ · 1 урок",
+      "section": "math-oge",
+      "sectionTitle": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "breadcrumbs": [
+        "Алгебра ОГЭ",
+        "2. 20 задание ОГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-oge-algebra-oge-1-urok/presentation.pdf",
+        "worksheet": "/library/math-oge-algebra-oge-1-urok/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-oge-algebra-oge-1-urok/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-oge-algebra-oge-2-urok",
+      "title": "Алгебра ОГЭ · 2 урок",
+      "section": "math-oge",
+      "sectionTitle": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "breadcrumbs": [
+        "Алгебра ОГЭ",
+        "2. 20 задание ОГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-oge-algebra-oge-2-urok/presentation.pdf",
+        "worksheet": "/library/math-oge-algebra-oge-2-urok/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-oge-algebra-oge-2-urok/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-oge-algebra-oge-3-urok",
+      "title": "Алгебра ОГЭ · 3 урок",
+      "section": "math-oge",
+      "sectionTitle": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "breadcrumbs": [
+        "Алгебра ОГЭ",
+        "2. 20 задание ОГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-oge-algebra-oge-3-urok/presentation.pdf",
+        "worksheet": "/library/math-oge-algebra-oge-3-urok/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-oge-algebra-oge-3-urok/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-oge-algebra-oge-gotovye-materialy",
+      "title": "Алгебра ОГЭ · Готовые материалы",
+      "section": "math-oge",
+      "sectionTitle": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "breadcrumbs": [
+        "Алгебра ОГЭ",
+        "2. 20 задание ОГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-oge-algebra-oge-gotovye-materialy/presentation.pdf",
+        "worksheet": "/library/math-oge-algebra-oge-gotovye-materialy/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-oge-algebra-oge-gotovye-materialy/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-oge-algebra-oge-urok-4",
+      "title": "Алгебра ОГЭ · урок 4",
+      "section": "math-oge",
+      "sectionTitle": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "breadcrumbs": [
+        "Алгебра ОГЭ",
+        "1. 22 задание ЕГЭ_1",
+        "урок 4"
+      ],
+      "files": {
+        "presentation": "/library/math-oge-algebra-oge-urok-4/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/math-oge-algebra-oge-urok-4/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-oge-geometriya-oge-dokazatelstvo-1",
+      "title": "Геометрия ОГЭ · Доказательство_1",
+      "section": "math-oge",
+      "sectionTitle": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "breadcrumbs": [
+        "Геометрия ОГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-oge-geometriya-oge-dokazatelstvo-1/presentation.pdf",
+        "worksheet": "/library/math-oge-geometriya-oge-dokazatelstvo-1/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-oge-geometriya-oge-dokazatelstvo-1/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-oge-geometriya-oge-dokazatelstvo-2",
+      "title": "Геометрия ОГЭ · Доказательство_2",
+      "section": "math-oge",
+      "sectionTitle": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "breadcrumbs": [
+        "Геометрия ОГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-oge-geometriya-oge-dokazatelstvo-2/presentation.pdf",
+        "worksheet": "/library/math-oge-geometriya-oge-dokazatelstvo-2/worksheet.pdf",
+        "answers": null,
+        "preview": "/library/math-oge-geometriya-oge-dokazatelstvo-2/preview.png"
+      },
+      "description": null,
+      "free": true
+    },
+    {
+      "slug": "math-oge-geometriya-oge-priznaki-podobiya-treugolnikov",
+      "title": "Геометрия ОГЭ · Признаки подобия треугольников",
+      "section": "math-oge",
+      "sectionTitle": "Математика, ОГЭ",
+      "subject": "math",
+      "grade": null,
+      "exam": "oge",
+      "breadcrumbs": [
+        "Геометрия ОГЭ"
+      ],
+      "files": {
+        "presentation": "/library/math-oge-geometriya-oge-priznaki-podobiya-treugolnikov/presentation.pdf",
+        "worksheet": null,
+        "answers": null,
+        "preview": "/library/math-oge-geometriya-oge-priznaki-podobiya-treugolnikov/preview.png"
+      },
+      "description": null,
+      "free": true
+    }
+  ],
+  "stats": {
+    "lessonsScanned": 62,
+    "lessonsKept": 62,
+    "filesCopied": 2,
+    "freeLessons": 62
+  }
+}
