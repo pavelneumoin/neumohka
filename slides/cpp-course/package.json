@@ -5,7 +5,8 @@
   "scripts": {
     "pdf": "marp deck.md --theme theme.css --allow-local-files -o cpp-course.pdf",
     "html": "marp deck.md --theme theme.css --allow-local-files -o cpp-course.html",
-    "watch": "marp -w deck.md --theme theme.css --allow-local-files"
+    "watch": "marp -w deck.md --theme theme.css --allow-local-files",
+    "templates": "marp templates.md --theme theme.css --allow-local-files -o templates.pdf"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.4.0",
