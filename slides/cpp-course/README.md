@@ -8,11 +8,23 @@
 
 | Файл | Что |
 |---|---|
-| `deck.md` | сами слайды (Markdown) — это и есть исходник |
-| `theme.css` | кастомная macOS-тема для Marp |
-| `cpp-course.pdf` | готовая презентация (результат) |
-| `cpp-course.html` | веб-версия для показа прямо в браузере |
+| `deck.md` | вступительная презентация курса (исходник) |
+| `templates.md` | библиотека макетов слайдов — справочник |
+| `theme.css` | macOS-тема для слайдов |
+| `worksheet.css` | печатная A4-тема для рабочих листов |
+| `lessons/NN-slug/` | уроки: `lesson.md` (слайды) + `worksheet.md` (рабочий лист) |
+| `PLAN.md` · `course-plan.md` | план реализации и учебный план |
+| `scripts/pdf-to-png.mjs` | PDF-точный рендер (pdf.js) для проверки артефактов |
 | `package.json` | команды сборки |
+
+## Команды
+
+```bash
+npm run build       # собрать всё: вступление + шаблоны + все уроки и листы
+npm run lessons     # только уроки и рабочие листы (lessons/**)
+npm run templates   # библиотека шаблонов → templates.pdf
+npm run check -- templates.pdf 12 2   # отрендерить страницу PDF через pdf.js
+```
 
 ## Как собрать
 

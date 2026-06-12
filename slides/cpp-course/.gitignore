@@ -1,2 +1,2 @@
-deck.*.png
-templates.*.png
+# generated preview images (root only; lesson content images allowed)
+/*.png

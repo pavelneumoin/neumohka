@@ -19,7 +19,9 @@
   --ok: #34c759;
   --warn: #ff9f0a;
   --radius: 22px;
-  --shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.22), 0 8px 20px -12px rgba(0, 0, 0, 0.16);
+  /* Компактная тень: узкое размытие, чтобы тени соседних карточек не
+     перекрывались и PDFKit (iPad) не «склеивал» их в серый блок. */
+  --shadow: 0 6px 14px rgba(29, 29, 31, 0.12);
 }
 
 section {
@@ -316,7 +318,7 @@ section.section::after { color: #6e6e73; }
 }
 
 /* === Card grid === */
-.grid { display: flex; gap: 28px; margin-top: 0.4em; }
+.grid { display: flex; gap: 36px; margin-top: 0.4em; }
 .grid > .card { flex: 1; }
 .card {
   background: var(--bg-2);

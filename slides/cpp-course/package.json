@@ -6,10 +6,15 @@
     "pdf": "marp deck.md --theme theme.css --allow-local-files -o cpp-course.pdf",
     "html": "marp deck.md --theme theme.css --allow-local-files -o cpp-course.html",
     "watch": "marp -w deck.md --theme theme.css --allow-local-files",
-    "templates": "marp templates.md --theme theme.css --allow-local-files -o templates.pdf"
+    "templates": "marp templates.md --theme theme.css --allow-local-files -o templates.pdf",
+    "lessons": "marp lessons/ --theme-set theme.css worksheet.css --allow-local-files --pdf",
+    "build": "npm run pdf && npm run templates && npm run lessons",
+    "check": "node scripts/pdf-to-png.mjs"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^4.4.0",
+    "@napi-rs/canvas": "^1.0.0",
+    "pdfjs-dist": "^6.0.227",
     "puppeteer": "^23.0.0"
   }
 }
