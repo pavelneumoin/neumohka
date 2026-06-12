@@ -19,9 +19,10 @@
   --ok: #34c759;
   --warn: #ff9f0a;
   --radius: 22px;
-  /* Компактная тень: узкое размытие, чтобы тени соседних карточек не
-     перекрывались и PDFKit (iPad) не «склеивал» их в серый блок. */
-  --shadow: 0 6px 14px rgba(29, 29, 31, 0.12);
+  /* Без размытых теней: Chromium запекает их в растровые SMask-маски, а
+     PDFKit (iPad) рендерит их как серый блок. Глубину держим на рамках. */
+  --shadow: none;
+  --ring: 1px solid var(--line);
 }
 
 section {
@@ -167,6 +168,7 @@ table {
   background: var(--bg-2);
   border-radius: var(--radius);
   overflow: hidden;
+  border: var(--ring);
   box-shadow: var(--shadow);
   margin: 0.5em 0;
 }
@@ -277,7 +279,6 @@ section.dark::after { color: #6e6e73; }
   padding: 0.25em 0.9em;
   font-size: 0.8em;
   font-weight: 600;
-  box-shadow: 0 2px 8px -4px rgba(0,0,0,0.2);
 }
 
 /* lead paragraph */
