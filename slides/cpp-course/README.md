@@ -14,7 +14,8 @@
 | `worksheet.css` | печатная A4-тема для рабочих листов |
 | `lessons/NN-slug/` | уроки: `lesson.md` (слайды) + `worksheet.md` (рабочий лист) |
 | `PLAN.md` · `course-plan.md` | план реализации и учебный план |
-| `scripts/pdf-to-png.mjs` | PDF-точный рендер (pdf.js) для проверки артефактов |
+| `marp.config.mjs` | конфиг Marp: эмодзи берутся локально (`@twemoji/svg`), не с CDN |
+| `scripts/pdf-to-png.mjs` · `scripts/check-emoji.mjs` | PDF-точный рендер (pdf.js) и страж эмодзи |
 | `package.json` | команды сборки |
 
 ## Команды
@@ -23,6 +24,7 @@
 npm run build       # собрать всё: вступление + шаблоны + все уроки и листы
 npm run lessons     # только уроки и рабочие листы (lessons/**)
 npm run templates   # библиотека шаблонов → templates.pdf
+npm run check:emoji # проверить, что у всех эмодзи есть локальный SVG
 npm run check -- templates.pdf 12 2   # отрендерить страницу PDF через pdf.js
 ```
 
