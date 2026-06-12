@@ -1,0 +1,14 @@
+{
+  "name": "cpp-course-slides",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "pdf": "marp deck.md --theme theme.css --allow-local-files -o cpp-course.pdf",
+    "html": "marp deck.md --theme theme.css --allow-local-files -o cpp-course.html",
+    "watch": "marp -w deck.md --theme theme.css --allow-local-files"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.4.0",
+    "puppeteer": "^23.0.0"
+  }
+}
