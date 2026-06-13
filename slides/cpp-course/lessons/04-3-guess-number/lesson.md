@@ -80,7 +80,7 @@ int secret = rand() % 100;
 
 ## break · выйти из цикла
 
-### `break` досрочно прерывает цикл — как стоп-кран.
+`break` досрочно прерывает цикл — как стоп-кран.
 
 ```cpp
 while (true) {
@@ -265,8 +265,7 @@ for (int i = 1; i <= 5; i++) {
 
 ```cpp
 srand(time(0));
-int secret = rand() % 100;
-int guess;
+int secret = rand() % 100, guess;
 while (true) {
     std::cin >> guess;
     if (guess < secret) std::cout << "Больше!\n";

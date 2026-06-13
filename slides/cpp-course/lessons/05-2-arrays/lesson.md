@@ -210,9 +210,7 @@ std::cout << v.size() << " " << v[0];
 
 ```cpp
 std::vector<int> v;
-v.push_back(3);
-v.push_back(3);
-v.push_back(3);
+v.push_back(3); v.push_back(3); v.push_back(3);
 int s = 0;
 for (int i = 0; i < v.size(); i++) s += v[i];
 std::cout << s;
