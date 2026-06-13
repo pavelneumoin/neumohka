@@ -208,12 +208,17 @@ hr {
 }
 
 /* --- Page numbers / footer --- */
+/* Номер в маленьком чипе в самом углу: даже если контент доходит донизу,
+   цифра остаётся читаемой и не сливается с цитатой/таблицей. */
 section::after {
   position: absolute;
-  bottom: 36px; right: 90px;
-  font-size: 16px;
+  bottom: 22px; right: 30px;
+  font-size: 15px;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 9px;
+  background: rgba(245, 245, 247, 0.82);
 }
 
 /* === Layout helpers via classes === */
@@ -264,7 +269,7 @@ section.dark h3 { color: #a1a1aa; }
 section.dark em { color: #a1a1aa; }
 section.dark blockquote { background: rgba(255,255,255,0.04); color: #f5f5f7; border-color: rgba(255,255,255,0.1); }
 section.dark code { background: rgba(255,255,255,0.1); }
-section.dark::after { color: #6e6e73; }
+section.dark::after { color: #a1a1aa; background: rgba(255, 255, 255, 0.10); }
 
 /* two-column flex via <div class="cols"> */
 .cols { display: flex; gap: 40px; }
@@ -310,7 +315,7 @@ section.section .bignum {
 }
 section.section h1 { font-size: 76px; }
 section.section h3 { color: #a1a1aa; font-weight: 500; }
-section.section::after { color: #6e6e73; }
+section.section::after { color: #a1a1aa; background: rgba(255, 255, 255, 0.10); }
 
 /* === Big stat number === */
 .stat {
