@@ -70,15 +70,14 @@ int secret = rand() % 100;   // число от 0 до 99
 
 ## Чтобы числа были разными 🔀
 
+### `srand(time(0))` пишут **один раз** в начале `main` — он заводит генератор по часам.
+
 ```cpp
 #include <cstdlib>
 #include <ctime>
-
-srand(time(0));              // «перемешать» один раз в начале
+srand(time(0));              // один раз в начале
 int secret = rand() % 100;
 ```
-
-### `srand(time(0))` пишут **один раз** в самом начале `main` — он заводит генератор по часам.
 
 <div class="bubble"><img class="bip-head" src="../../assets/bip-head.svg"><span>Без srand я каждый запуск загадываю одно и то же число — скучно! С ним — каждый раз новое.</span></div>
 
@@ -184,38 +183,29 @@ for (int i = 1; i <= 5; i++) {
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-
 int main() {
     srand(time(0));
-    int secret = rand() % 100;
-    int guess;
+    int secret = rand() % 100, guess;
 ```
 
-<div class="tip">Три <strong>#include</strong> обязательны: iostream — для ввода-вывода, cstdlib — для rand, ctime — для time.</div>
+Три `#include`: iostream — ввод-вывод, cstdlib — rand, ctime — time.
 
 ---
 
 ## Игра целиком · часть 2/2 🧩
 
-### Теперь сам цикл угадывания:
+### Теперь сам цикл угадывания. Соедини часть 1 и часть 2 — и играй:
 
 ```cpp
     while (true) {
         std::cin >> guess;
-        if (guess < secret)
-            std::cout << "Больше!\n";
-        else if (guess > secret)
-            std::cout << "Меньше!\n";
-        else {
-            std::cout << "Угадал!\n";
-            break;
-        }
+        if (guess < secret) std::cout << "Больше!\n";
+        else if (guess > secret) std::cout << "Меньше!\n";
+        else { std::cout << "Угадал!\n"; break; }
     }
     return 0;
 }
 ```
-
-<div class="bubble"><img class="bip-head" src="../../assets/bip-head.svg"><span>Это вся игра! Соедини часть 1 и часть 2 — и можно играть.</span></div>
 
 ---
 
@@ -313,10 +303,9 @@ for (int i = 1; i <= 5; i++) {
 
 # Задача 1 · Запускаем игру 🎯
 
-Собери игру из части 1 и части 2 целиком и сыграй с соседом:
+### Собери игру из части 1 и части 2 целиком и сыграй с соседом:
 
 ```cpp
-srand(time(0));
 int secret = rand() % 100, guess;
 while (true) {
     std::cin >> guess;
@@ -325,8 +314,6 @@ while (true) {
     else { std::cout << "Угадал!\n"; break; }
 }
 ```
-
-`Не забудь три #include и main!`
 
 ---
 
