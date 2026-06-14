@@ -5,6 +5,7 @@ paginate: false
 ---
 
 <div class="sheet-head">
+<img class="bip-sheet" src="../../assets/bip-head.svg">
 <div class="kicker">Шпаргалка · Урок 4.3</div>
 
 # Игра «Угадай число» 🎯

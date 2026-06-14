@@ -5,6 +5,7 @@ paginate: false
 ---
 
 <div class="sheet-head">
+<img class="bip-sheet" src="../../assets/bip-head.svg">
 <div class="kicker">Шпаргалка · Урок 3.1</div>
 
 # Игра задаёт вопросы 🎮

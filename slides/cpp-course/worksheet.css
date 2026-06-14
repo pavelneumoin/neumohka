@@ -1,8 +1,10 @@
 /* @theme worksheet */
 
 /*
- * Печатный рабочий лист, A4 портрет. Чисто, экономно по краске:
- * белый фон, тёмный текст, тонкие линейки, акцент только в заголовках.
+ * Печатный лист/шпаргалка A4 в фирменном стиле «C++ с нуля».
+ * Тёплая палитра, шрифт Nunito, маскот Бип в шапке, цветные акценты.
+ * Экономно по краске: белый фон, тонкие линии, цвет — только в акцентах.
+ * Бип в шапке добавляется картинкой: <img class="bip-sheet" src="../../assets/bip-head.svg">
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -25,35 +27,47 @@ section {
   font-size: 11.5pt;
   line-height: 1.45;
   color: var(--ink);
-  background: #fff;
   position: relative;
   letter-spacing: -0.005em;
+  /* фирменная полоса по верхнему краю */
+  background: var(--accent-grad) top / 100% 4mm no-repeat, #fff;
 }
 
-/* --- Header --- */
+/* --- Шапка --- */
+.sheet-head {
+  position: relative;
+  border-bottom: 2.4px solid var(--ink);
+  padding: 0 24mm 3mm 0;
+  margin-bottom: 4.5mm;
+}
+.bip-sheet {
+  position: absolute;
+  top: -1mm; right: 0;
+  width: 21mm; height: auto;
+}
 h1 {
-  font-size: 21pt;
+  font-size: 22pt;
   font-weight: 800;
   letter-spacing: -0.02em;
   margin: 0;
+  color: var(--ink);
 }
 .kicker {
-  font-size: 9pt;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  display: inline-block;
+  font-size: 8.5pt;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 1mm;
-}
-.sheet-head {
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 3mm;
-  margin-bottom: 4mm;
+  background: #EFEAFB;
+  padding: 0.7mm 2.4mm;
+  border-radius: 999px;
+  margin-bottom: 2mm;
 }
 .fields {
   display: flex;
   gap: 8mm;
-  margin-top: 3mm;
+  margin-top: 3.5mm;
   font-size: 10pt;
   color: var(--muted);
 }
@@ -63,43 +77,46 @@ h1 {
   padding-bottom: 1mm;
 }
 
-/* --- Task headings --- */
+/* --- Заголовки задач --- */
 h2 {
-  font-size: 13pt;
-  font-weight: 700;
-  margin: 5mm 0 2mm;
+  font-size: 13.5pt;
+  font-weight: 800;
+  margin: 5.5mm 0 2mm;
   display: flex;
-  align-items: baseline;
-  gap: 2.5mm;
+  align-items: center;
+  gap: 2.6mm;
+  color: var(--ink);
 }
 h2::before {
   content: '';
-  display: inline-block;
-  width: 2mm; height: 2mm;
-  border-radius: 50%;
+  flex: 0 0 auto;
+  width: 3mm; height: 3mm;
+  border-radius: 1mm;
   background: var(--accent-grad);
 }
-h3 { font-size: 11pt; font-weight: 600; color: var(--muted); margin: 3mm 0 1mm; }
+h3 { font-size: 11pt; font-weight: 700; color: var(--muted); margin: 3mm 0 1mm; }
 
 p { margin: 1.5mm 0; }
-strong { font-weight: 700; }
+strong { font-weight: 800; }
 em { color: var(--muted); font-style: normal; }
 
-/* lists */
 ul, ol { margin: 1.5mm 0; padding-left: 6mm; }
 li { margin: 1mm 0; }
 
-/* --- Inline + block code (light, print-friendly) --- */
+/* --- Код (светлый, для печати) --- */
 code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.88em;
-  background: var(--soft);
+  background: #EFEAFB;
+  color: var(--accent);
   padding: 0.5mm 1.5mm;
   border-radius: 1.5mm;
+  font-weight: 600;
 }
 pre {
   background: var(--soft);
   border: 1px solid var(--line);
+  border-left: 1.4mm solid var(--accent);
   border-radius: 3mm;
   padding: 3mm 4mm;
   margin: 2mm 0;
@@ -107,15 +124,14 @@ pre {
 }
 pre code {
   background: transparent;
+  color: var(--ink);
   padding: 0;
   font-size: 10.5pt;
   line-height: 1.5;
-  color: var(--ink);
+  font-weight: 500;
 }
 
-/* --- Writing helpers --- */
-
-/* ruled lines for handwriting; set height via inline style if needed */
+/* --- Поля для письма --- */
 .lines {
   height: 22mm;
   margin: 2mm 0 3mm;
@@ -127,9 +143,8 @@ pre code {
 .lines.sm { height: 8mm; }
 .lines.lg { height: 38mm; }
 
-/* empty box to write code/answer */
 .box {
-  border: 1px dashed var(--line);
+  border: 1.3px dashed #C7BCF0;
   border-radius: 3mm;
   min-height: 26mm;
   margin: 2mm 0 3mm;
@@ -142,47 +157,43 @@ pre code {
   position: absolute;
   top: 1.5mm; right: 3mm;
   font-size: 8pt;
-  color: var(--muted);
+  color: var(--accent);
   font-family: 'JetBrains Mono', monospace;
 }
 
-/* hint / note */
-.hint {
-  font-size: 9.5pt;
-  color: var(--muted);
-  font-style: italic;
+/* --- Заметка / подсказка Бипа --- */
+.note {
+  background: var(--soft);
+  border-left: 1.5mm solid var(--accent);
+  border-radius: 2mm;
+  padding: 2mm 3mm;
+  margin: 2mm 0;
+  font-size: 10pt;
 }
+.note strong { color: var(--accent); }
+.hint { font-size: 9.5pt; color: var(--muted); font-style: italic; }
 
-/* star badge for bonus tasks */
+/* --- Бейдж «со звёздочкой» --- */
 .star {
   display: inline-block;
   font-size: 8.5pt;
-  font-weight: 700;
+  font-weight: 800;
   color: #fff;
   background: var(--accent-grad);
   border-radius: 999px;
-  padding: 0.3mm 2mm;
+  padding: 0.4mm 2.2mm;
   vertical-align: middle;
   margin-left: 1.5mm;
 }
 
-/* table (light) */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  font-size: 10pt;
-  margin: 2mm 0;
-}
-th, td {
-  border: 1px solid var(--line);
-  padding: 2mm 3mm;
-  text-align: left;
-}
-thead th { background: var(--soft); font-weight: 700; }
+/* --- Таблица --- */
+table { border-collapse: collapse; width: 100%; font-size: 10pt; margin: 2mm 0; }
+th, td { border: 1px solid var(--line); padding: 2mm 3mm; text-align: left; }
+thead th { background: #EFEAFB; font-weight: 800; color: var(--accent); }
 
-/* footer */
+/* --- Подвал --- */
 section::after {
-  content: 'Неумошка · C++ с нуля';
+  content: '🤖 Неумошка · C++ с нуля';
   position: absolute;
   bottom: 8mm; left: 16mm; right: 16mm;
   border-top: 1px solid var(--line);
