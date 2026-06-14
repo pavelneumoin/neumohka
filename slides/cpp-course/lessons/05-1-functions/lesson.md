@@ -137,10 +137,8 @@ int main() {
 void pozdorovatsya() {        // объявили помощника
     std::cout << "Привет!\n"; // что он делает
 }
-
 int main() {                  // главная функция
     pozdorovatsya();          // зовём помощника
-    return 0;
 }
 ```
 

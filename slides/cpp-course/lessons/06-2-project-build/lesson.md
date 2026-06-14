@@ -311,7 +311,6 @@ int main() {
     int score = 0
     std::cout << "Вопрос: 2 + 2?";
     std::cin >> answer;
-    return 0;
 }
 ```
 
