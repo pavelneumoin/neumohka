@@ -37,6 +37,10 @@ const sheetFiles = lessons.flatMap((d) => [
   path.join(root, 'lessons', d, 'worksheet.pdf'),
   path.join(root, 'lessons', d, 'cheatsheet.pdf'),
 ]);
+const answerFiles = lessons.map((d) => path.join(root, 'lessons', d, 'answers.pdf'));
 
 await merge(slideFiles, 'cpp-course-slides.pdf');
 await merge(sheetFiles, 'cpp-course-worksheets.pdf');
+if (answerFiles.some((f) => fs.existsSync(f))) {
+  await merge(answerFiles, 'cpp-course-answers.pdf');
+}
