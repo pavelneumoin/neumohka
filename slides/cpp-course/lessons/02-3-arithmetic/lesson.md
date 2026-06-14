@@ -77,9 +77,7 @@ std::cout << "Итого: " << total << " руб.\n";
 
 ### Цену умножаю на количество — получаю стоимость.
 
-<div class="fact">На экране: <span class="out">Итого: 180 руб.</span> Результат `price * count` я положил в новый ящик `total`.</div>
-
-<div class="try">Поменяй count на 5 и запусти. Угадаешь итог до того, как я его выведу?</div>
+<div class="fact">На экране: <span class="out">Итого: 180 руб.</span> Результат <strong>price * count</strong> я положил в новый ящик <strong>total</strong>.</div>
 
 ---
 
@@ -318,7 +316,7 @@ std::cout << "Сдача: " << change << " руб.\n";
 
 ## Что мы сегодня узнали 💪
 
-<div class="bubble"><img class="bip-head" src="../../assets/bip-head.svg"><span>Теперь я настоящая касса: умножаю, вычитаю, делю и считаю сдачу. Деньги со мной не потеряются!</span></div>
+<div class="bubble"><img class="bip-head" src="../../assets/bip-head.svg"><span>Теперь я настоящая касса: считаю стоимость и сдачу!</span></div>
 
 - Операторы: `+ - * / %`
 - Порядок действий: сначала `*` и `/`, потом `+` и `-`

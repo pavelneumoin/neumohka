@@ -358,7 +358,7 @@ std::cout << "Вы берёте " << count << " шт.\n";
 
 ## Что мы сегодня узнали 💪
 
-<div class="bubble"><img class="bip-head" src="../../assets/bip-head.svg"><span>Теперь я слышу тебя! Спроси у покупателя что угодно — я запомню и отвечу.</span></div>
+<div class="bubble"><img class="bip-head" src="../../assets/bip-head.svg"><span>Теперь я слышу тебя! Спроси что угодно — я запомню и отвечу.</span></div>
 
 - `std::cin >> x;` — прочитать данные с клавиатуры в переменную
 - Стрелочки `>>` смотрят внутрь ящика
