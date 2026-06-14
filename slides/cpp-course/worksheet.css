@@ -173,6 +173,27 @@ pre code {
 .note strong { color: var(--accent); }
 .hint { font-size: 9.5pt; color: var(--muted); font-style: italic; }
 
+/* --- Ответ (версия «для учителя») --- */
+.solution {
+  background: #E9FBF4;
+  border-left: 1.5mm solid #14C2A3;
+  border-radius: 2mm;
+  padding: 2mm 3mm;
+  margin: 2mm 0;
+  font-size: 10pt;
+}
+.solution::before {
+  content: '✓ Ответ';
+  display: block;
+  font-weight: 800;
+  font-size: 8.5pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0FA98E;
+  margin-bottom: 0.8mm;
+}
+.solution strong { color: #0E9E84; }
+
 /* --- Бейдж «со звёздочкой» --- */
 .star {
   display: inline-block;
