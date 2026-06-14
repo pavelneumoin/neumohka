@@ -1,0 +1,54 @@
+<svg width="260" height="286" viewBox="0 0 260 286" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- shadow -->
+  <ellipse cx="130" cy="272" rx="74" ry="10" fill="#211E33" opacity="0.10"/>
+
+  <!-- antenna -->
+  <path d="M130 50 V20" stroke="#6C4BF5" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="130" cy="15" r="11" fill="#FF6B5C"/>
+  <circle cx="126" cy="11" r="3.5" fill="#FFFFFF" opacity="0.7"/>
+
+  <!-- right arm (waving) -->
+  <g transform="rotate(24 205 178)">
+    <rect x="196" y="128" width="19" height="60" rx="9.5" fill="#5B3FE0"/>
+    <circle cx="205" cy="124" r="13" fill="#6C4BF5"/>
+  </g>
+  <!-- left arm -->
+  <rect x="45" y="184" width="19" height="56" rx="9.5" fill="#5B3FE0"/>
+  <circle cx="54" cy="240" r="12" fill="#6C4BF5"/>
+
+  <!-- body -->
+  <rect x="72" y="170" width="116" height="86" rx="26" fill="#7B5BFF"/>
+  <circle cx="130" cy="206" r="15" fill="#FFC23C"/>
+  <circle cx="130" cy="206" r="6" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="110" cy="234" r="5" fill="#5B3FE0"/>
+  <circle cx="130" cy="234" r="5" fill="#5B3FE0"/>
+  <circle cx="150" cy="234" r="5" fill="#5B3FE0"/>
+
+  <!-- feet -->
+  <rect x="90" y="250" width="30" height="15" rx="7.5" fill="#5238D6"/>
+  <rect x="140" y="250" width="30" height="15" rx="7.5" fill="#5238D6"/>
+
+  <!-- neck -->
+  <rect x="120" y="160" width="20" height="14" fill="#5B3FE0"/>
+
+  <!-- head -->
+  <rect x="56" y="48" width="148" height="118" rx="32" fill="#6C4BF5"/>
+  <circle cx="52" cy="107" r="10" fill="#5238D6"/>
+  <circle cx="208" cy="107" r="10" fill="#5238D6"/>
+
+  <!-- face screen -->
+  <rect x="76" y="68" width="108" height="78" rx="22" fill="#211E33"/>
+
+  <!-- eyes -->
+  <circle cx="108" cy="100" r="13" fill="#14C2A3"/>
+  <circle cx="152" cy="100" r="13" fill="#14C2A3"/>
+  <circle cx="103" cy="95" r="4" fill="#FFFFFF"/>
+  <circle cx="147" cy="95" r="4" fill="#FFFFFF"/>
+
+  <!-- cheeks -->
+  <circle cx="88" cy="122" r="7" fill="#FF6B5C" opacity="0.55"/>
+  <circle cx="172" cy="122" r="7" fill="#FF6B5C" opacity="0.55"/>
+
+  <!-- smile -->
+  <path d="M104 120 Q130 138 156 120" stroke="#14C2A3" stroke-width="6" stroke-linecap="round"/>
+</svg>

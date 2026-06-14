@@ -11,6 +11,8 @@ const base = pathToFileURL(join(here, 'node_modules', '@twemoji')).href + '/';
 export default {
   allowLocalFiles: true,
   options: {
+    // minifyCSS ломает длинные data-URI маскота в background — отключаем.
+    minifyCSS: false,
     emoji: {
       twemoji: { base, ext: 'svg' },
     },

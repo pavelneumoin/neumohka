@@ -5,23 +5,23 @@
  * белый фон, тёмный текст, тонкие линейки, акцент только в заголовках.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --ink: #1d1d1f;
-  --muted: #6e6e73;
-  --line: #cfcfd4;
-  --soft: #f3f3f6;
-  --accent: #0071e3;
-  --accent-2: #5e5ce6;
-  --accent-grad: linear-gradient(120deg, #0071e3 0%, #5e5ce6 100%);
+  --ink: #241F38;
+  --muted: #6E6A86;
+  --line: #D9D4CC;
+  --soft: #F4F1EA;
+  --accent: #6C4BF5;
+  --accent-2: #FF6B5C;
+  --accent-grad: linear-gradient(120deg, #6C4BF5 0%, #FF6B5C 100%);
 }
 
 section {
   width: 210mm;
   height: 297mm;
   padding: 15mm 16mm 16mm;
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Nunito', -apple-system, sans-serif;
   font-size: 11.5pt;
   line-height: 1.45;
   color: var(--ink);
