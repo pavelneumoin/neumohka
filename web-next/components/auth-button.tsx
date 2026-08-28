@@ -9,6 +9,13 @@ type Me = {
   avatar: string | null;
 } | null;
 
+type VkOneTapSubscription = {
+  on: (
+    event: string,
+    handler: (payload: unknown) => void
+  ) => VkOneTapSubscription;
+};
+
 declare global {
   interface Window {
     VKIDSDK?: {
@@ -16,9 +23,11 @@ declare global {
       ConfigResponseMode: { Callback: string };
       ConfigSource: { LOWCODE: string };
       OneTap: new () => {
-        render: (cfg: { container: HTMLElement; showAlternativeLogin?: boolean }) => {
-          on: (event: string, handler: (payload: unknown) => void) => unknown;
-        };
+        render: (cfg: {
+          container: HTMLElement;
+          showAlternativeLogin?: boolean;
+        }) => VkOneTapSubscription;
+        close: () => void;
       };
       WidgetEvents: { ERROR: string };
       OneTapInternalEvents: { LOGIN_SUCCESS: string };
@@ -55,17 +64,21 @@ export function AuthButton() {
   // 2. Ждём VK SDK (грузится из layout через next/script)
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.VKIDSDK) {
-      setVkReady(true);
-      return;
-    }
-    const id = setInterval(() => {
+    const checkSdk = () => {
       if (window.VKIDSDK) {
         setVkReady(true);
-        clearInterval(id);
+        return true;
       }
+      return false;
+    };
+    const firstCheck = window.setTimeout(checkSdk, 0);
+    const interval = window.setInterval(() => {
+      if (checkSdk()) window.clearInterval(interval);
     }, 200);
-    return () => clearInterval(id);
+    return () => {
+      window.clearTimeout(firstCheck);
+      window.clearInterval(interval);
+    };
   }, []);
 
   // 3. Когда есть SDK и нет пользователя — рендерим VK OneTap кнопку
@@ -118,6 +131,8 @@ export function AuthButton() {
           }
         }
       );
+
+    return () => oneTap.close();
   }, [loading, me, vkReady]);
 
   if (loading) {
