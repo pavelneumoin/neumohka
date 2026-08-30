@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 
 type Props = {
   slug: string;
+  isFree: boolean;
   files: {
     presentation: string | null;
     worksheet: string | null;
@@ -25,9 +26,11 @@ type Stage =
   | "confirming"
   | "unlocked";
 
-export function ShareGate({ slug, files, title }: Props) {
+export function ShareGate({ slug, isFree, files, title }: Props) {
   const [me, setMe] = useState<Me | null>(null);
-  const [stage, setStage] = useState<Stage>("loading");
+  const [stage, setStage] = useState<Stage>(
+    isFree ? "unlocked" : "loading"
+  );
   const [error, setError] = useState<string | null>(null);
 
   const refresh = useCallback(() => {
@@ -49,8 +52,8 @@ export function ShareGate({ slug, files, title }: Props) {
   }, [slug]);
 
   useEffect(() => {
-    refresh();
-  }, [refresh]);
+    if (!isFree) refresh();
+  }, [isFree, refresh]);
 
   const onShare = () => {
     setError(null);

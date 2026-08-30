@@ -140,8 +140,10 @@ export default async function LessonPage({ params }: { params: Params }) {
               </h1>
 
               <ShareGate
+                key={lesson.slug}
                 slug={lesson.slug}
                 title={lesson.title}
+                isFree={lesson.free}
                 files={{
                   presentation: lesson.files.presentation
                     ? `/api/file/${lesson.slug}/presentation`

@@ -4,24 +4,31 @@ import path from "node:path";
 import { getCurrentUser } from "@/lib/auth";
 import { hasUnlock } from "@/lib/store";
 import { getLessonBySlug } from "@/lib/catalog";
+import { resolveMaterialAccess } from "@/lib/material-access";
 
 export const runtime = "nodejs";
 
-const ALLOWED_TYPES = new Set(["presentation", "worksheet", "answers"]);
+const MATERIAL_TYPES = ["presentation", "worksheet", "answers"] as const;
+type MaterialType = (typeof MATERIAL_TYPES)[number];
+const ALLOWED_TYPES = new Set<MaterialType>(MATERIAL_TYPES);
+
+function isMaterialType(value: string): value is MaterialType {
+  return ALLOWED_TYPES.has(value as MaterialType);
+}
 
 /**
  * GET /api/file/[slug]/[type]
  * Отдаёт PDF урока с проверкой:
- *   1. пользователь залогинен (cookie session)
- *   2. у него есть unlock на этот lesson_slug
- * Иначе 401/403 + редирект на /lesson/[slug] для входа/share.
+ *   1. бесплатный урок из каталога доступен без сессии;
+ *   2. для остальных уроков пользователь должен войти и иметь unlock.
+ * Иначе редирект на /lesson/[slug] для входа/share.
  */
 export async function GET(
   _request: Request,
   context: { params: Promise<{ slug: string; type: string }> }
 ) {
   const { slug, type } = await context.params;
-  if (!ALLOWED_TYPES.has(type)) {
+  if (!isMaterialType(type)) {
     return NextResponse.json({ error: "invalid_type" }, { status: 400 });
   }
 
@@ -29,15 +36,24 @@ export async function GET(
   if (!lesson) {
     return NextResponse.json({ error: "lesson_not_found" }, { status: 404 });
   }
+  if (!lesson.files[type]) {
+    return NextResponse.json({ error: "file_not_available" }, { status: 404 });
+  }
 
-  const user = await getCurrentUser();
-  if (!user) {
+  const user = lesson.free ? null : await getCurrentUser();
+  const access = resolveMaterialAccess({
+    free: lesson.free,
+    authenticated: Boolean(user),
+    unlocked: user ? hasUnlock(user.id, slug) : false,
+  });
+
+  if (access === "login") {
     return NextResponse.redirect(
       new URL(`/lesson/${slug}?reason=login`, _request.url)
     );
   }
 
-  if (!hasUnlock(user.id, slug)) {
+  if (access === "share") {
     return NextResponse.redirect(
       new URL(`/lesson/${slug}?reason=share`, _request.url)
     );

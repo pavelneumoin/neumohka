@@ -7,9 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "check": "npm run verify:data && npm run test:auth && npm run test:access && npm run lint && tsc --noEmit --incremental false",
     "test:auth": "node scripts/test-vk-auth.mjs",
+    "test:access": "node scripts/test-material-access.mjs",
+    "verify:data": "node scripts/check-catalog.mjs",
     "sync": "node scripts/sync-library.mjs",
-    "prebuild": "node scripts/sync-library.mjs"
+    "prebuild": "npm run verify:data"
   },
   "dependencies": {
     "next": "16.2.6",
