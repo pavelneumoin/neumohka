@@ -162,7 +162,7 @@ function UserMenu({ user }: { user: NonNullable<Me> }) {
     <div style={{ position: "relative" }}>
       <button
         type="button"
-        className="btn ghost sm"
+        className="btn ghost sm auth-user-trigger"
         onClick={() => setOpen((v) => !v)}
         style={{ display: "flex", alignItems: "center", gap: 8 }}
       >
@@ -175,7 +175,10 @@ function UserMenu({ user }: { user: NonNullable<Me> }) {
             style={{ borderRadius: 999 }}
           />
         )}
-        <span style={{ maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+        <span
+          className="auth-user-name"
+          style={{ maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+        >
           {user.name}
         </span>
       </button>

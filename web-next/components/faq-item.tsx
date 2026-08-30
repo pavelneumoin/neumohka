@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 export function FaqItem({
   question,
   children,
@@ -9,23 +5,17 @@ export function FaqItem({
   question: string;
   children: React.ReactNode;
 }) {
-  const [open, setOpen] = useState(false);
   return (
-    <div className={`faq-item${open ? " open" : ""}`}>
-      <button
-        className="faq-q"
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-      >
+    <details className="faq-item">
+      <summary className="faq-q">
         {question}
-        <span className="pm" aria-hidden>
+        <span className="pm" aria-hidden="true">
           +
         </span>
-      </button>
+      </summary>
       <div className="faq-a">
         <p>{children}</p>
       </div>
-    </div>
+    </details>
   );
 }
