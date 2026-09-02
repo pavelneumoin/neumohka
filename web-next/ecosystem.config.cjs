@@ -5,8 +5,10 @@
  * Структура на сервере: /opt/neumoshka-web/
  *   .next/standalone/server.js  — Next.js standalone сервер
  *   .next/static/               — статика (рядом со standalone)
- *   public/                     — public-папка с PDF
- *   .env.local                  — env с VK_SERVICE_TOKEN и т.д.
+ *   public/library/             — только публичные PNG-превью
+ *   private/library/            — PDF вне web-статики
+ *   data/store/                 — постоянные сессии и доступы
+ *   .env.local                  — переменные окружения
  */
 module.exports = {
   apps: [
@@ -18,6 +20,7 @@ module.exports = {
         NODE_ENV: "production",
         PORT: "3030",
         HOSTNAME: "127.0.0.1",
+        NEUMOSHKA_STORAGE_ROOT: "/opt/neumoshka-web",
       },
       instances: 1,
       autorestart: true,

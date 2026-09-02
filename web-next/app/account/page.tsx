@@ -1,27 +1,31 @@
-import Link from "next/link";
+import { redirect } from "next/navigation";
+import { AccountDashboard } from "@/components/account-dashboard";
+import { getCurrentUser } from "@/lib/auth";
+import { catalog } from "@/lib/catalog";
+import { getFavoritesForUser, toPublicUser } from "@/lib/store";
 
-export const metadata = { title: "Кабинет — Неумошка" };
+export const metadata = {
+  title: "Личный кабинет — Неумошка",
+  description: "Избранные уроки и персональная библиотека материалов.",
+  robots: { index: false, follow: false },
+};
 
-export default function AccountPage() {
+export default async function AccountPage() {
+  const user = await getCurrentUser();
+  if (!user) redirect("/login?next=/account");
+
+  const favoriteSlugs = new Set(
+    getFavoritesForUser(user.id).map((favorite) => favorite.lesson_slug)
+  );
+  const favoriteLessons = catalog.lessons.filter((lesson) =>
+    favoriteSlugs.has(lesson.slug)
+  );
+
   return (
-    <section className="section">
-      <div className="wrap-narrow">
-        <span className="eyebrow">кабинет</span>
-        <h1 style={{ marginTop: 12, fontSize: 36 }}>
-          Кабинет скоро откроется
-        </h1>
-        <p className="muted" style={{ marginTop: 12 }}>
-          Здесь будут история скачиваний, статус подписки, чеки и настройки
-          watermark. Запуск — после интеграции с ЮKassa.
-        </p>
-        <Link
-          href="/catalog"
-          className="btn primary lg"
-          style={{ marginTop: 24 }}
-        >
-          Открыть каталог →
-        </Link>
-      </div>
-    </section>
+    <AccountDashboard
+      user={toPublicUser(user)}
+      favoriteLessons={favoriteLessons}
+      totalLessons={catalog.lessons.length}
+    />
   );
 }

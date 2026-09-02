@@ -1,18 +1,27 @@
 import { NextResponse } from "next/server";
 import { getCurrentUser } from "@/lib/auth";
-import { getUnlocksForUser } from "@/lib/store";
+import {
+  getFavoritesForUser,
+  getUnlocksForUser,
+  toPublicUser,
+} from "@/lib/store";
 
 export async function GET() {
   const user = await getCurrentUser();
-  if (!user) return NextResponse.json({ user: null });
+  if (!user) return noStoreJson({ user: null, favorites: [], unlocks: [] });
   const unlocks = getUnlocksForUser(user.id).map((u) => u.lesson_slug);
-  return NextResponse.json({
-    user: {
-      id: user.id,
-      vk_id: user.vk_id,
-      name: user.name,
-      avatar: user.avatar,
-    },
+  const favorites = getFavoritesForUser(user.id).map(
+    (favorite) => favorite.lesson_slug
+  );
+  return noStoreJson({
+    user: toPublicUser(user),
+    favorites,
     unlocks,
+  });
+}
+
+function noStoreJson(body: unknown) {
+  return NextResponse.json(body, {
+    headers: { "Cache-Control": "no-store" },
   });
 }

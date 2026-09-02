@@ -1,8 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { catalog, getLessonBySlug, lessonChips, asset } from "@/lib/catalog";
+import { asset, catalog, getLessonBySlug, lessonChips } from "@/lib/catalog";
 import { LessonCard } from "@/components/lesson-card";
 import { ShareGate } from "@/components/share-gate";
+import { FavoriteButton } from "@/components/favorite-button";
+import {
+  MaterialsCarousel,
+  type MaterialItem,
+} from "@/components/materials-carousel";
 
 type Params = Promise<{ slug: string }>;
 
@@ -10,16 +15,32 @@ export async function generateMetadata({ params }: { params: Params }) {
   const { slug } = await params;
   const lesson = getLessonBySlug(slug);
   if (!lesson) return { title: "Урок не найден — Неумошка" };
+
   const ogImage = lesson.files.preview ? asset(lesson.files.preview) : undefined;
+  const cleanedDescription = cleanDescription(lesson.description);
+  const available = [
+    lesson.files.presentation && "презентация",
+    lesson.files.worksheet && "рабочий лист",
+    lesson.files.answers && "ответы",
+  ].filter(Boolean);
+  const description =
+    cleanedDescription?.slice(0, 160) ||
+    `${lesson.sectionTitle}. Готовые материалы: ${available.join(", ")}.`;
+
   return {
-    title: `${lesson.title} — ${lesson.sectionTitle} — Неумошка`,
-    description:
-      lesson.description?.slice(0, 160) ||
-      `Готовый урок «${lesson.title}» от Павла Неумоина.`,
+    title: `${lesson.title} — Неумошка`,
+    description,
+    alternates: { canonical: `/lesson/${lesson.slug}` },
     openGraph: {
       title: lesson.title,
-      description: `${lesson.sectionTitle}. Презентация и рабочий лист от Павла Неумоина.`,
-      images: ogImage ? [ogImage] : undefined,
+      description,
+      images: ogImage ? [ogImage] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: lesson.title,
+      description,
+      images: ogImage ? [ogImage] : [],
     },
   };
 }
@@ -31,117 +52,71 @@ export default async function LessonPage({ params }: { params: Params }) {
 
   const chips = lessonChips(lesson);
   const related = catalog.lessons
-    .filter((l) => l.section === lesson.section && l.slug !== lesson.slug)
+    .filter((item) => item.section === lesson.section && item.slug !== lesson.slug)
     .slice(0, 3);
-
-  // Все ссылки на файлы идут через middleware-rewrite на /api/file/[slug]/[type].
-  // ShareGate сам подменит их если у пользователя нет unlock.
   const fileItems: { key: string; label: string; available: boolean }[] = [
-    { key: "presentation", label: "Презентация", available: !!lesson.files.presentation },
-    { key: "worksheet", label: "Рабочий лист", available: !!lesson.files.worksheet },
-    { key: "answers", label: "Ответы", available: !!lesson.files.answers },
+    {
+      key: "presentation",
+      label: "Презентация",
+      available: Boolean(lesson.files.presentation),
+    },
+    {
+      key: "worksheet",
+      label: "Рабочий лист",
+      available: Boolean(lesson.files.worksheet),
+    },
+    {
+      key: "answers",
+      label: "Ответы",
+      available: Boolean(lesson.files.answers),
+    },
   ];
-
+  const description = cleanDescription(lesson.description);
   const previewUrl = asset(lesson.files.preview);
+  const carouselItems: MaterialItem[] = fileItems
+    .filter((file) => file.available)
+    .map((file) => ({
+      key: file.key as MaterialItem["key"],
+      label: file.label,
+      href: `/api/file/${lesson.slug}/${file.key}`,
+    }));
 
   return (
     <>
-      {/* Breadcrumbs */}
-      <div style={{ padding: "18px 0", borderBottom: "1px solid var(--line)" }}>
-        <div className="wrap mono muted" style={{ fontSize: 13 }}>
+      <div className="breadcrumbs-bar">
+        <nav className="wrap mono muted breadcrumbs" aria-label="Хлебные крошки">
           <Link href="/catalog">каталог</Link>
-          {" / "}
+          <span aria-hidden> / </span>
           <Link href={`/catalog?s=${lesson.section}`}>{lesson.sectionTitle}</Link>
-          {" / "}
-          <span style={{ color: "var(--ink)" }}>{lesson.title}</span>
-        </div>
+          <span aria-hidden> / </span>
+          <span aria-current="page">{lesson.title}</span>
+        </nav>
       </div>
 
-      <section style={{ padding: "40px 0 96px" }}>
+      <section className="lesson-section">
         <div className="wrap">
-          <div
-            className="lesson-detail-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1.4fr 1fr",
-              gap: 56,
-              alignItems: "start",
-            }}
-          >
-            {/* Preview */}
-            <div>
-              <div
-                className="slide-preview"
-                style={{ aspectRatio: "4 / 3" }}
-              >
-                {previewUrl ? (
-                  <img src={previewUrl} alt={lesson.title} />
-                ) : (
-                  <div className="sp-inner" style={{ padding: "32px 40px" }}>
-                    <div>
-                      <div
-                        className="sp-eyebrow mono muted"
-                        style={{ fontSize: 11 }}
-                      >
-                        {chips.slice(0, 2).join(" · ")}
-                      </div>
-                      <div
-                        className="sp-title"
-                        style={{ fontSize: 32, marginTop: 8 }}
-                      >
-                        {lesson.title}
-                      </div>
-                    </div>
-                    <div className="sp-bullets">
-                      <div />
-                      <div />
-                      <div />
-                    </div>
-                    <div className="sp-meta" style={{ fontSize: 11 }}>
-                      <span>неумошка</span>
-                      <span>после репоста</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {lesson.description && (
-                <div style={{ marginTop: 40 }}>
-                  <span className="eyebrow">описание</span>
-                  <p
-                    style={{
-                      marginTop: 12,
-                      fontSize: 16,
-                      lineHeight: 1.65,
-                      whiteSpace: "pre-wrap",
-                      color: "var(--ink-2)",
-                    }}
-                  >
-                    {lesson.description}
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Meta sticky */}
-            <div
-              className="col"
-              style={{ gap: 24, position: "sticky", top: 96 }}
-            >
+          <div className="lesson-detail-grid">
+            <div className="lesson-detail-meta col">
               <div className="chip-row">
-                {chips.map((c) => (
-                  <span key={c} className="chip">
-                    {c}
+                {chips.map((chip) => (
+                  <span key={chip} className="chip">
+                    {chip}
                   </span>
                 ))}
               </div>
-              <h1 className="serif" style={{ fontSize: 44 }}>
-                {lesson.title}
-              </h1>
+              <div className="lesson-heading-row">
+                <h1 className="serif lesson-title">{lesson.title}</h1>
+                <FavoriteButton
+                  slug={lesson.slug}
+                  title={lesson.title}
+                  className="lesson-favorite"
+                />
+              </div>
 
               <ShareGate
                 slug={lesson.slug}
                 title={lesson.title}
+                free={lesson.free}
                 files={{
                   presentation: lesson.files.presentation
                     ? `/api/file/${lesson.slug}/presentation`
@@ -155,47 +130,21 @@ export default async function LessonPage({ params }: { params: Params }) {
                 }}
               />
 
-              <div
-                className="card card-tight"
-                style={{ background: "var(--bg-soft)", border: "none" }}
-              >
-                <div className="eyebrow" style={{ marginBottom: 12 }}>
-                  что внутри
-                </div>
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: 0,
-                    margin: 0,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 10,
-                    fontSize: 15,
-                  }}
-                >
-                  {fileItems.map((f) => (
+              <div className="card card-tight lesson-contents">
+                <div className="eyebrow">что внутри</div>
+                <ul>
+                  {fileItems.map((file) => (
                     <li
-                      key={f.key}
+                      key={file.key}
                       className="row"
-                      style={{
-                        gap: 10,
-                        color: f.available ? "var(--ink)" : "var(--ink-3)",
-                      }}
+                      data-available={file.available}
                     >
-                      <span
-                        className="mono"
-                        style={{
-                          color: f.available ? "var(--accent)" : "var(--ink-3)",
-                          width: 12,
-                        }}
-                      >
-                        {f.available ? "✓" : "·"}
+                      <span className="mono file-status" aria-hidden>
+                        {file.available ? "✓" : "·"}
                       </span>
-                      <span>{f.label}</span>
-                      {!f.available && (
-                        <span className="faded" style={{ fontSize: 12 }}>
-                          (нет в этом уроке)
-                        </span>
+                      <span>{file.label}</span>
+                      {!file.available && (
+                        <span className="faded missing-file">нет в этом уроке</span>
                       )}
                     </li>
                   ))}
@@ -203,33 +152,38 @@ export default async function LessonPage({ params }: { params: Params }) {
               </div>
 
               <div>
-                <div className="eyebrow" style={{ marginBottom: 8 }}>
-                  раздел
-                </div>
-                <p style={{ fontSize: 14 }} className="muted">
+                <div className="eyebrow">раздел</div>
+                <p className="muted lesson-section-link">
                   <Link href={`/catalog?s=${lesson.section}`}>
                     {lesson.sectionTitle}
                   </Link>
                 </p>
               </div>
             </div>
+
+            <div className="lesson-detail-preview">
+              <MaterialsCarousel
+                items={carouselItems}
+                lessonTitle={lesson.title}
+                previewUrl={previewUrl}
+              />
+
+              {description && (
+                <div className="lesson-description">
+                  <span className="eyebrow">описание</span>
+                  <p>{description}</p>
+                </div>
+              )}
+            </div>
           </div>
 
           {related.length > 0 && (
-            <div
-              style={{
-                marginTop: 96,
-                paddingTop: 56,
-                borderTop: "1px solid var(--line)",
-              }}
-            >
+            <div className="related-lessons">
               <span className="eyebrow">похожие уроки</span>
-              <h2 style={{ marginTop: 12, marginBottom: 32 }}>
-                Из той же темы.
-              </h2>
+              <h2>Из той же темы.</h2>
               <div className="lesson-grid">
-                {related.map((l) => (
-                  <LessonCard key={l.slug} lesson={l} />
+                {related.map((item) => (
+                  <LessonCard key={item.slug} lesson={item} />
                 ))}
               </div>
             </div>
@@ -238,4 +192,20 @@ export default async function LessonPage({ params }: { params: Params }) {
       </section>
     </>
   );
+}
+
+function cleanDescription(value: string | null): string | null {
+  if (!value) return null;
+  const lines = value.replaceAll("**", "").split(/\r?\n/);
+  const cutoff = lines.findIndex((line) =>
+    ["В открытом доступе", "👑", "👇"].some((marker) =>
+      line.trim().startsWith(marker)
+    )
+  );
+  const useful = (cutoff >= 0 ? lines.slice(0, cutoff) : lines)
+    .filter((line) => !line.includes("[Ссылка_на_Donut]"))
+    .filter((line) => !line.trim().startsWith("#"))
+    .join("\n")
+    .trim();
+  return useful || null;
 }

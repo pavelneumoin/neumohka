@@ -1,192 +1,92 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
-type Me = {
-  id: string;
-  vk_id: number;
-  name: string;
-  avatar: string | null;
-} | null;
-
-declare global {
-  interface Window {
-    VKIDSDK?: {
-      Config: { init: (cfg: Record<string, unknown>) => void; ResponseMode: { Callback: string } };
-      ConfigResponseMode: { Callback: string };
-      ConfigSource: { LOWCODE: string };
-      OneTap: new () => {
-        render: (cfg: { container: HTMLElement; showAlternativeLogin?: boolean }) => {
-          on: (event: string, handler: (payload: unknown) => void) => unknown;
-        };
-      };
-      WidgetEvents: { ERROR: string };
-      OneTapInternalEvents: { LOGIN_SUCCESS: string };
-      Auth: {
-        exchangeCode: (
-          code: string,
-          deviceId: string
-        ) => Promise<{ access_token: string; user_id: number }>;
-      };
-    };
-  }
-}
-
-const APP_ID = Number(process.env.NEXT_PUBLIC_VK_APP_ID || 0);
-const REDIRECT_URL =
-  process.env.NEXT_PUBLIC_VK_REDIRECT_URL ||
-  "https://neumoshka.ru/api/auth/vk/callback";
+import Link from "next/link";
+import { useEffect, useId, useRef, useState } from "react";
+import { useSession } from "@/components/session-provider";
 
 export function AuthButton() {
-  const [me, setMe] = useState<Me>(null);
-  const [loading, setLoading] = useState(true);
-  const [vkReady, setVkReady] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const { status, user } = useSession();
 
-  // 1. Загружаем текущего пользователя
-  useEffect(() => {
-    fetch("/api/auth/me", { cache: "no-store" })
-      .then((r) => r.json())
-      .then((d) => setMe(d.user))
-      .catch(() => setMe(null))
-      .finally(() => setLoading(false));
-  }, []);
-
-  // 2. Ждём VK SDK (грузится из layout через next/script)
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.VKIDSDK) {
-      setVkReady(true);
-      return;
-    }
-    const id = setInterval(() => {
-      if (window.VKIDSDK) {
-        setVkReady(true);
-        clearInterval(id);
-      }
-    }, 200);
-    return () => clearInterval(id);
-  }, []);
-
-  // 3. Когда есть SDK и нет пользователя — рендерим VK OneTap кнопку
-  useEffect(() => {
-    if (loading || me || !vkReady || !containerRef.current) return;
-    if (!APP_ID) {
-      console.warn("NEXT_PUBLIC_VK_APP_ID не задан");
-      return;
-    }
-    const VKID = window.VKIDSDK!;
-    VKID.Config.init({
-      app: APP_ID,
-      redirectUrl: REDIRECT_URL,
-      responseMode: VKID.ConfigResponseMode.Callback,
-      source: VKID.ConfigSource.LOWCODE,
-      scope: "",
-    });
-
-    const oneTap = new VKID.OneTap();
-    containerRef.current.innerHTML = ""; // защита от двойного рендера в strict mode
-    oneTap
-      .render({
-        container: containerRef.current,
-        showAlternativeLogin: true,
-      })
-      .on(VKID.WidgetEvents.ERROR, (err: unknown) => {
-        console.warn("VK ID error:", err);
-      })
-      .on(
-        VKID.OneTapInternalEvents.LOGIN_SUCCESS,
-        async (raw: unknown) => {
-          const payload = raw as { code: string; device_id: string };
-          try {
-            const tokens = await VKID.Auth.exchangeCode(
-              payload.code,
-              payload.device_id
-            );
-            const res = await fetch("/api/auth/vk/exchange", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                access_token: tokens.access_token,
-                user_id: tokens.user_id,
-              }),
-            });
-            if (!res.ok) throw new Error(`exchange failed: ${res.status}`);
-            window.location.reload();
-          } catch (err) {
-            console.error("VK exchange failed:", err);
-          }
-        }
-      );
-  }, [loading, me, vkReady]);
-
-  if (loading) {
-    return <span className="mono muted" style={{ fontSize: 12 }}>…</span>;
+  if (status === "loading") {
+    return (
+      <span className="mono muted auth-loading" role="status">
+        вход…
+      </span>
+    );
   }
-
-  if (me) {
-    return <UserMenu user={me} />;
-  }
-
+  if (user) return <UserMenu name={user.name} />;
   return (
-    <div
-      ref={containerRef}
-      style={{ minWidth: 140 }}
-      aria-label="Войти через VK"
-    />
+    <Link href="/login" className="btn ghost sm">
+      Войти
+    </Link>
   );
 }
-
-function UserMenu({ user }: { user: NonNullable<Me> }) {
+function UserMenu({ name }: { name: string }) {
+  const { logout } = useSession();
   const [open, setOpen] = useState(false);
+  const [error, setError] = useState(false);
+  const menuId = useId();
+  const rootRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        buttonRef.current?.focus();
+      }
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [open]);
+
   const onLogout = async () => {
-    await fetch("/api/auth/logout", { method: "POST" });
-    window.location.reload();
+    setError(false);
+    try {
+      await logout();
+    } catch {
+      setError(true);
+    }
   };
+
   return (
-    <div style={{ position: "relative" }}>
+    <div className="user-menu" ref={rootRef}>
       <button
+        ref={buttonRef}
         type="button"
-        className="btn ghost sm"
-        onClick={() => setOpen((v) => !v)}
-        style={{ display: "flex", alignItems: "center", gap: 8 }}
+        className="btn ghost sm user-menu-trigger"
+        onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+        aria-haspopup="menu"
+        aria-controls={menuId}
       >
-        {user.avatar && (
-          <img
-            src={user.avatar}
-            alt=""
-            width={24}
-            height={24}
-            style={{ borderRadius: 999 }}
-          />
-        )}
-        <span style={{ maxWidth: 120, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-          {user.name}
+        <span className="user-avatar-fallback" aria-hidden>
+          {name.slice(0, 1).toLocaleUpperCase("ru-RU")}
         </span>
+        <span className="user-name">{name}</span>
       </button>
       {open && (
-        <div
-          style={{
-            position: "absolute",
-            top: "calc(100% + 8px)",
-            right: 0,
-            background: "var(--bg-card)",
-            border: "1px solid var(--line)",
-            borderRadius: 12,
-            boxShadow: "var(--shadow-md)",
-            padding: 8,
-            minWidth: 180,
-            zIndex: 100,
-          }}
-        >
+        <div id={menuId} className="user-menu-popup" role="menu">
+          <Link href="/account" className="btn ghost sm block" role="menuitem">
+            Личный кабинет
+          </Link>
           <button
             type="button"
-            onClick={onLogout}
+            onClick={() => void onLogout()}
             className="btn ghost sm block"
-            style={{ width: "100%", justifyContent: "flex-start" }}
+            role="menuitem"
           >
             Выйти
           </button>
+          {error && <span className="auth-menu-error">Не удалось выйти</span>}
         </div>
       )}
     </div>

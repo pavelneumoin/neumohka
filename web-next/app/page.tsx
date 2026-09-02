@@ -3,10 +3,14 @@ import { catalog } from "@/lib/catalog";
 import { LessonCard } from "@/components/lesson-card";
 import { FaqItem } from "@/components/faq-item";
 
+export const metadata = { alternates: { canonical: "/" } };
+
 export default function HomePage() {
   const total = catalog.lessons.length;
   const freeCount = catalog.lessons.filter((l) => l.free).length;
   const sectionCount = catalog.sections.length;
+  const worksheetCount = catalog.lessons.filter((l) => l.files.worksheet).length;
+  const answerCount = catalog.lessons.filter((l) => l.files.answers).length;
 
   // 4 урока с превью для секции «реальные слайды» — приоритет бесплатным
   const showcase = [
@@ -43,22 +47,22 @@ export default function HomePage() {
                 </span>
               </h1>
               <p className="lead">
-                Презентация и рабочий лист на каждый урок. Личная библиотека
-                Павла Неумоина — все материалы, по которым он сам ведёт уроки.
+                Презентация в каждом уроке, рабочие листы — там, где они уже
+                готовы. Личная библиотека Павла Неумоина для своих занятий.
               </p>
               <div className="row" style={{ gap: 12, marginTop: 8 }}>
                 <Link href="/catalog" className="btn primary lg">
                   Открыть каталог →
                 </Link>
-                <Link href="/pricing" className="btn lg">
-                  Тарифы
+                <Link href="/account" className="btn lg">
+                  Личный кабинет
                 </Link>
               </div>
               <p
                 className="mono muted"
                 style={{ fontSize: 12, marginTop: 4 }}
               >
-                один раздел открыт бесплатно навсегда · 590 ₽/мес за всё
+                все {total} уроков открыты · кабинет нужен для избранного
               </p>
             </div>
 
@@ -171,7 +175,7 @@ export default function HomePage() {
           <TrustItem big={String(sectionCount)} small="разделов: алгебра, инф, ЕГЭ, ОГЭ" />
           <TrustItem big={String(freeCount)} small="уроков открыто бесплатно" />
           <TrustItem big="1" small="автор: Павел Неумоин" />
-          <TrustItem big="PDF + LaTeX" small="формат файлов" />
+          <TrustItem big="PDF" small="формат материалов" />
         </div>
       </section>
 
@@ -180,23 +184,27 @@ export default function HomePage() {
         <div className="wrap">
           <div style={{ marginBottom: 56, maxWidth: 600 }}>
             <span className="eyebrow">что внутри</span>
-            <h2 style={{ marginTop: 12 }}>Три файла на каждый урок.</h2>
+            <h2 style={{ marginTop: 12 }}>Материалы для готового урока.</h2>
           </div>
           <div className="grid grid-3">
             <FeatureCard
               badge="P"
               title="Презентация"
-              text="PDF, 16–22 слайда. Структура: разогрев → теория → примеры → задачи на отработку. К ней — LaTeX-исходник, чтобы можно было поправить под свой класс."
+              text={`Презентация в PDF есть во всех ${total} уроках. Можно открыть на проекторе или скачать заранее.`}
             />
             <FeatureCard
               badge="A4"
               title="Рабочий лист"
-              text="Готов к печати на класс. С теорией с пропусками, классной и самостоятельной частями. На полях — невидимый watermark с email."
+              text={`Рабочие листы сейчас доступны для ${worksheetCount} из ${total} уроков. Наличие всегда честно указано в карточке.`}
             />
             <FeatureCard
               badge="✓"
               title="Ответы"
-              text="Отдельный PDF с решениями для учителя. Где есть код на Python — отдельный .py-файл с разбором."
+              text={
+                answerCount > 0
+                  ? `Отдельные ответы доступны для ${answerCount} уроков.`
+                  : "Отдельные файлы с ответами ещё добавляются. Если их нет, карточка урока прямо об этом сообщает."
+              }
             />
           </div>
         </div>
@@ -219,13 +227,13 @@ export default function HomePage() {
           <div className="grid grid-3" style={{ gap: 32 }}>
             <Step
               n="01"
-              title="Зашли"
-              text="Один раздел открыт навсегда — без подписки и без логина. Можно просто скачать пару уроков и оценить."
+              title="Нашли тему"
+              text="Введите тему, класс или номер задания. Поиск понимает опечатки, сокращения и неверную раскладку."
             />
             <Step
               n="02"
-              title="Подписались"
-              text="590 ₽/мес — открывается весь каталог, что уже есть, и всё, что появится. Отмена в один клик."
+              title="Посмотрели материалы"
+              text="Переключайтесь между всеми доступными файлами прямо на странице урока."
             />
             <Step
               n="03"
@@ -250,8 +258,8 @@ export default function HomePage() {
                   Реальные слайды из реальных уроков.
                 </h2>
                 <p className="lead" style={{ marginTop: 16 }}>
-                  Не сток-картинки. Это первые страницы PDF, которые вы получите
-                  в подписке.
+                  Не сток-картинки. Это первые страницы PDF из открытого
+                  каталога материалов.
                 </p>
               </div>
               <Link href="/catalog" className="btn">
@@ -267,7 +275,7 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* PRICING TEASER */}
+      {/* PERSONAL LIBRARY */}
       <section
         className="section"
         style={{
@@ -276,49 +284,32 @@ export default function HomePage() {
           borderBottom: "1px solid var(--line)",
         }}
       >
-        <div className="wrap">
-          <div style={{ marginBottom: 48, textAlign: "center" }}>
-            <span className="eyebrow">тарифы</span>
-            <h2 style={{ marginTop: 12 }}>Один доступ ко всему каталогу.</h2>
-            <p className="lead" style={{ margin: "16px auto 0" }}>
-              Чем дольше период — тем дешевле в пересчёте на месяц.
+        <div className="wrap account-promo">
+          <div>
+            <span className="eyebrow">личная библиотека</span>
+            <h2 style={{ marginTop: 12 }}>Нужные уроки всегда под рукой.</h2>
+            <p className="lead" style={{ marginTop: 16 }}>
+              Отмечайте материалы звездой, собирайте подборку к ближайшим
+              занятиям и возвращайтесь к ней из красивого личного кабинета.
             </p>
+            <Link href="/signup" className="btn primary lg" style={{ marginTop: 24 }}>
+              Создать кабинет →
+            </Link>
           </div>
-          <div
-            className="pricing-grid"
-            style={{ maxWidth: 960, margin: "0 auto" }}
-          >
-            <MiniPlan
-              name="Месяц"
-              price="590 ₽"
-              unit="в месяц"
-              cta="Выбрать"
-              href="/signup?plan=month"
-            />
-            <MiniPlan
-              featured
-              name="Год"
-              price="4 990 ₽"
-              unit="≈ 416 ₽ в месяц"
-              chip="−30%"
-              cta="Выбрать год"
-              href="/signup?plan=year"
-            />
-            <MiniPlan
-              name="Квартал"
-              price="1 490 ₽"
-              unit="≈ 497 ₽ в месяц"
-              chip="−16%"
-              cta="Выбрать"
-              href="/signup?plan=quarter"
-            />
+          <div className="account-promo-card card">
+            <div className="account-promo-top">
+              <span className="account-avatar" aria-hidden>П</span>
+              <div>
+                <strong>Моя библиотека</strong>
+                <p className="mono muted">избранные материалы</p>
+              </div>
+            </div>
+            <div className="account-promo-stats">
+              <span><strong>★</strong> сохраняйте уроки</span>
+              <span><strong>⌕</strong> находите за секунды</span>
+              <span><strong>▤</strong> смотрите PDF онлайн</span>
+            </div>
           </div>
-          <p
-            className="mono muted"
-            style={{ textAlign: "center", fontSize: 12, marginTop: 32 }}
-          >
-            <Link href="/pricing">подробнее о тарифах →</Link>
-          </p>
         </div>
       </section>
 
@@ -330,17 +321,17 @@ export default function HomePage() {
             <h2 style={{ marginTop: 12 }}>Что обычно спрашивают.</h2>
           </div>
           <FaqItem question="Можно ли распечатывать рабочие листы для всего класса">
-            Да. Это обычный PDF на A4. На полях — невидимый watermark с email,
-            ученикам он не мешает.
+            Да. Если рабочий лист есть в карточке урока, это обычный PDF на A4,
+            который можно распечатать для своего класса.
           </FaqItem>
           <FaqItem question="Подходит ли учебникам Мерзляк, Макарычев, Никольский">
-            Уроки построены по ФГОС, темы совпадают со всеми основными
-            учебниками. В описании урока указано, к каким параграфам подходит.
+            Темы соответствуют школьной программе, но порядок и формулировки в
+            учебниках могут отличаться. Сверьте тему и состав файлов в карточке
+            урока перед занятием.
           </FaqItem>
-          <FaqItem question="Что будет с уроками после отмены подписки">
-            Скачанные файлы остаются у вас. Доступ к новым закрывается. При
-            годовой подписке доступ остаётся навсегда — даже после отмены
-            автопродления.
+          <FaqItem question="Как сохранить урок на потом">
+            Создайте личный кабинет и нажмите на звезду в карточке урока. Он
+            сразу появится в вашей персональной библиотеке.
           </FaqItem>
           <FaqItem question="Кто автор">
             Все материалы делает Павел Неумоин — учитель математики и
@@ -370,7 +361,7 @@ export default function HomePage() {
         >
           <div>
             <h2 style={{ color: "var(--bg)" }}>
-              Один раздел открыт бесплатно навсегда.
+              Все {total} уроков уже открыты.
             </h2>
             <p
               style={{
@@ -379,12 +370,12 @@ export default function HomePage() {
                 fontSize: 16,
               }}
             >
-              Скачайте уроки без подписки и без логина. Понравится — оформите
-              доступ ко всему каталогу.
+              Ищите тему умным поиском, смотрите материалы онлайн или скачивайте
+              PDF для проектора и печати.
             </p>
           </div>
           <Link
-            href="/catalog?free=1"
+            href="/catalog"
             className="btn lg"
             style={{
               background: "var(--bg)",
@@ -392,7 +383,7 @@ export default function HomePage() {
               borderColor: "var(--bg)",
             }}
           >
-            {freeCount} бесплатных уроков →
+            Открыть {freeCount} уроков →
           </Link>
         </div>
       </section>
@@ -483,47 +474,6 @@ function Step({
       <p className="muted" style={{ marginTop: 8, fontSize: 15 }}>
         {text}
       </p>
-    </div>
-  );
-}
-
-function MiniPlan({
-  name,
-  price,
-  unit,
-  chip,
-  cta,
-  href,
-  featured,
-}: {
-  name: string;
-  price: string;
-  unit: string;
-  chip?: string;
-  cta: string;
-  href: string;
-  featured?: boolean;
-}) {
-  return (
-    <div className={`plan${featured ? " featured" : ""}`}>
-      <div className="plan-head">
-        <div className="plan-name">{name}</div>
-        {chip && (
-          <span className={`chip${featured ? " accent" : ""}`}>{chip}</span>
-        )}
-      </div>
-      <div>
-        <div
-          className="plan-price"
-          style={featured ? { color: "var(--accent-ink)" } : undefined}
-        >
-          {price}
-        </div>
-        <div className="plan-unit">{unit}</div>
-      </div>
-      <Link href={href} className={`btn${featured ? " primary" : ""} block`}>
-        {cta}
-      </Link>
     </div>
   );
 }

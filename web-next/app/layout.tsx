@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Lora, JetBrains_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SessionProvider } from "@/components/session-provider";
 
 const inter = Inter({
   variable: "--font-ui",
@@ -28,9 +28,34 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://neumoshka.ru"
+  ),
   title: "Неумошка — готовые уроки от Павла Неумоина",
   description:
-    "Подписка на готовые уроки математики и информатики 8–11 класс: презентации, рабочие листы, ответы. От учителя для учителей.",
+    "Готовые уроки математики и информатики для 8–11 классов: презентации и рабочие листы. Во время бета-тестирования каталог открыт бесплатно.",
+  openGraph: {
+    title: "Неумошка — готовые уроки от Павла Неумоина",
+    description:
+      "Готовые уроки математики и информатики для 8–11 классов: презентации и рабочие листы.",
+    type: "website",
+    locale: "ru_RU",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Неумошка — готовые уроки математики и информатики",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Неумошка — готовые уроки от Павла Неумоина",
+    description:
+      "Готовые уроки математики и информатики для 8–11 классов: презентации и рабочие листы.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({
@@ -42,13 +67,16 @@ export default function RootLayout({
       className={`${inter.variable} ${lora.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Script
-          src="https://unpkg.com/@vkid/sdk@<3.0.0/dist-sdk/umd/index.js"
-          strategy="afterInteractive"
-        />
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <SessionProvider>
+          <a className="skip-link" href="#main-content">
+            Перейти к содержанию
+          </a>
+          <SiteHeader />
+          <main id="main-content" tabIndex={-1} className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </SessionProvider>
       </body>
     </html>
   );

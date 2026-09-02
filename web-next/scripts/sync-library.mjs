@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * Синк уроков из E:/YA/YandexDisk/Lessons/library/ в web-next.
+ * Синк уроков из локальной библиотеки в web-next.
  * - Рекурсивно ищет presentation.pdf как маркер «это урок».
- * - Копирует presentation/worksheet/answers PDF в public/library/{slug}/.
- * - Тащит первые pres-N.png как превью.
+ * - Копирует PDF в private/library/{slug}/ (вне публичной статики).
+ * - Тащит первые pres-N.png как публичные превью.
  * - Парсит верхнюю папку секции (subject/grade/exam).
  * - Пишет data/catalog.json.
  *
- * Запуск: node scripts/sync-library.mjs
+ * По умолчанию строит только план. Применение требует хеш именно этого плана:
+ * npm run sync -- --apply --confirm=<plan-hash>
  */
 
 import fs from "node:fs";
@@ -18,9 +19,20 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const LIBRARY = "E:/YA/YandexDisk/Lessons/library";
+const LIBRARY =
+  process.env.NEUMOSHKA_LIBRARY_SOURCE ||
+  "E:/YA/YandexDisk/Lessons/library";
 const OUT_PUBLIC = path.join(ROOT, "public", "library");
+const OUT_PRIVATE = path.join(ROOT, "private", "library");
 const OUT_DATA = path.join(ROOT, "data", "catalog.json");
+const OVERRIDES_PATH = path.join(ROOT, "data", "source-overrides.json");
+const PDFTOPPM = process.env.PDFTOPPM_PATH || "pdftoppm";
+const APPLY = process.argv.includes("--apply");
+const CONFIRM = process.argv
+  .find((arg) => arg.startsWith("--confirm="))
+  ?.slice("--confirm=".length);
+const INCLUDE_OTHER = process.argv.includes("--include-other");
+const ACCEPT_CATALOG_DELTA = process.argv.includes("--accept-catalog-delta");
 
 const SECTION_DEFS = [
   { test: /Алгебра.*?(\d+)\s*класс/i, subject: "algebra", grade: 1 },
@@ -126,6 +138,26 @@ function readDirSafe(p) {
   }
 }
 
+const SKIP_SCAN_DIRS = [
+  /^node_modules$/i,
+  /^\.next$/i,
+  /^output$/i,
+  /^build$/i,
+  /^_build$/i,
+  /^_marp$/i,
+  /^tmp$/i,
+  /^temp$/i,
+  /^архив/i,
+  /^archive/i,
+  /^исходник/i,
+  /^редактируем.*исходник/i,
+  /^редакци/i,
+];
+
+function shouldSkipScanDir(name) {
+  return name.startsWith(".") || SKIP_SCAN_DIRS.some((rule) => rule.test(name));
+}
+
 function findPresentationDirs(rootDir, maxDepth = 4) {
   // возвращает список { dir, depthRel } где есть presentation.pdf
   const results = [];
@@ -139,7 +171,7 @@ function findPresentationDirs(rootDir, maxDepth = 4) {
     }
     for (const entry of entries) {
       const full = path.join(dir, entry);
-      if (entry.startsWith(".") || entry === "node_modules") continue;
+      if (shouldSkipScanDir(entry)) continue;
       if (isDir(full)) walk(full, depth + 1);
     }
   }
@@ -169,11 +201,6 @@ function lessonTitleFromPath(lessonDir, sectionDir) {
   const last = cleanTitle(meaningful[meaningful.length - 1]);
   if (first === last) return first;
   return `${first} · ${last}`;
-}
-
-function findFirst(dir, predicate) {
-  const entries = readDirSafe(dir);
-  return entries.find(predicate) || null;
 }
 
 function findFirstPreview(dirs) {
@@ -234,7 +261,7 @@ function copyIfChanged(src, dst) {
 let pdftoppmAvailable = null;
 function hasPdftoppm() {
   if (pdftoppmAvailable !== null) return pdftoppmAvailable;
-  const r = spawnSync("pdftoppm", ["-v"], { stdio: "ignore" });
+  const r = spawnSync(PDFTOPPM, ["-v"], { stdio: "ignore" });
   pdftoppmAvailable = r.status === 0 || r.status === 99 || r.error === undefined;
   if (r.error) pdftoppmAvailable = false;
   return pdftoppmAvailable;
@@ -244,18 +271,18 @@ function hasPdftoppm() {
  *  Возвращает true, если файл был сгенерирован (или уже актуален). */
 function renderPdfFirstPage(pdfPath, pngPath) {
   if (!exists(pdfPath)) return false;
-  if (!hasPdftoppm()) return false;
   // инкрементально: если png новее pdf — пропускаем
   if (exists(pngPath)) {
     const a = fs.statSync(pdfPath);
     const b = fs.statSync(pngPath);
-    if (b.mtimeMs >= a.mtimeMs) return false;
+    if (b.mtimeMs >= a.mtimeMs) return true;
   }
+  if (!hasPdftoppm()) return false;
   ensureDir(path.dirname(pngPath));
   // pdftoppm пишет с суффиксом "-N.png", поэтому даём prefix без расширения
   const tmpPrefix = pngPath.replace(/\.png$/, "");
   const r = spawnSync(
-    "pdftoppm",
+    PDFTOPPM,
     ["-png", "-r", "100", "-f", "1", "-l", "1", pdfPath, tmpPrefix],
     { stdio: "ignore" }
   );
@@ -268,29 +295,76 @@ function renderPdfFirstPage(pdfPath, pngPath) {
   return true;
 }
 
+function isPreviewCurrent(sourcePath, previewPath) {
+  if (!exists(sourcePath) || !exists(previewPath)) return false;
+  return fs.statSync(previewPath).mtimeMs >= fs.statSync(sourcePath).mtimeMs;
+}
+
+function sourceFingerprint(sourcePath) {
+  if (!sourcePath) return null;
+  const stat = fs.statSync(sourcePath);
+  return {
+    path: path.relative(LIBRARY, sourcePath).split(path.sep).join("/"),
+    size: stat.size,
+    mtimeMs: Math.trunc(stat.mtimeMs),
+  };
+}
+
+function writeJsonAtomic(targetPath, value) {
+  ensureDir(path.dirname(targetPath));
+  const tmp = `${targetPath}.${process.pid}.${Date.now()}.tmp`;
+  fs.writeFileSync(tmp, JSON.stringify(value, null, 2), "utf-8");
+  fs.renameSync(tmp, targetPath);
+}
+
+function removePublicPdfs(directory) {
+  let removed = 0;
+  for (const entry of readDirSafe(directory)) {
+    const full = path.join(directory, entry);
+    if (isDir(full)) {
+      removed += removePublicPdfs(full);
+    } else if (entry.toLowerCase().endsWith(".pdf")) {
+      fs.rmSync(full, { force: true });
+      removed++;
+    }
+  }
+  return removed;
+}
+
 function main() {
   if (!isDir(LIBRARY)) {
     console.error(`[sync] library not found: ${LIBRARY}`);
     process.exit(1);
   }
 
-  ensureDir(path.dirname(OUT_DATA));
-  ensureDir(OUT_PUBLIC);
+  let sourceOverrides = {};
+  if (exists(OVERRIDES_PATH)) {
+    try {
+      sourceOverrides = JSON.parse(fs.readFileSync(OVERRIDES_PATH, "utf-8"));
+    } catch (error) {
+      console.error("[sync] invalid data/source-overrides.json", error);
+      process.exit(1);
+    }
+  }
 
-  const sectionDirs = readDirSafe(LIBRARY).filter((n) =>
-    isDir(path.join(LIBRARY, n))
-  );
+  const sectionDirs = readDirSafe(LIBRARY)
+    .filter((n) => isDir(path.join(LIBRARY, n)))
+    .sort((a, b) => a.localeCompare(b, "ru"));
 
   const sectionsBySlug = new Map();
   const lessons = [];
   const slugSeen = new Map();
 
-  let copiedFiles = 0;
   let lessonsScanned = 0;
+  const skippedSections = [];
 
   for (const sectionRaw of sectionDirs) {
     const sectionDir = path.join(LIBRARY, sectionRaw);
     const meta = classifySection(sectionRaw);
+    if (meta.subject === "other" && !INCLUDE_OTHER) {
+      skippedSections.push(sectionRaw);
+      continue;
+    }
     const sSlug = sectionSlug(meta);
     const sTitle = sectionTitle(meta);
 
@@ -306,7 +380,9 @@ function main() {
     }
     sectionsBySlug.get(sSlug).rawDirs.push(sectionRaw);
 
-    const lessonDirs = findPresentationDirs(sectionDir, 4);
+    const lessonDirs = findPresentationDirs(sectionDir).sort((a, b) =>
+      a.dir.localeCompare(b.dir, "ru")
+    );
     for (const { dir } of lessonDirs) {
       lessonsScanned++;
       const cleanLesson = lessonTitleFromPath(dir, sectionDir);
@@ -318,47 +394,47 @@ function main() {
       while (slugSeen.has(slug)) slug = `${baseSlug}-${n++}`;
       slugSeen.set(slug, dir);
 
-      const dstDir = path.join(OUT_PUBLIC, slug);
-
       // ищем файлы рядом с presentation.pdf и в родителе (для wildcat-раскладки)
       const parentDir = path.dirname(dir);
       const searchDirs = parentDir !== sectionDir ? [dir, parentDir] : [dir];
+      const lessonOverrides = sourceOverrides[slug] || {};
+      const displayTitle =
+        typeof lessonOverrides.title === "string" && lessonOverrides.title.trim()
+          ? cleanTitle(lessonOverrides.title)
+          : cleanLesson;
 
       const filesOut = {};
+      const sources = {};
       for (const [field, fname] of [
         ["presentation", "presentation.pdf"],
         ["worksheet", "worksheet.pdf"],
         ["answers", "answers.pdf"],
       ]) {
-        const src = findFile(searchDirs, fname);
-        if (src) {
-          const dst = path.join(dstDir, fname);
-          if (copyIfChanged(src, dst)) copiedFiles++;
-          filesOut[field] = `/library/${slug}/${fname}`;
-        } else {
-          filesOut[field] = null;
+        const override = lessonOverrides[field];
+        const src = override
+          ? path.resolve(dir, override)
+          : findFile(searchDirs, fname);
+        if (src && !exists(src)) {
+          console.error(`[sync] override not found for ${slug}/${field}: ${src}`);
+          process.exit(1);
         }
+        sources[field] = src || null;
+        filesOut[field] = src ? `/api/file/${slug}/${field}` : null;
       }
 
-      // preview: сначала готовый pres-N.png, иначе генерим из presentation.pdf
-      const previewDst = path.join(dstDir, "preview.png");
-      const previewSrc = findFirstPreview(searchDirs);
-      let previewReady = false;
-      if (previewSrc) {
-        if (copyIfChanged(previewSrc, previewDst)) copiedFiles++;
-        previewReady = true;
-      } else if (filesOut.presentation) {
-        // присылаем pdftoppm на оригинальный pdf
-        const pdfSrc = findFile(searchDirs, "presentation.pdf");
-        if (pdfSrc && renderPdfFirstPage(pdfSrc, previewDst)) {
-          copiedFiles++;
-          previewReady = true;
-        } else if (exists(previewDst)) {
-          // прежняя сгенерированная версия ещё актуальна
-          previewReady = true;
-        }
+      // preview: сначала готовый pres-N.png, иначе первая страница presentation.pdf
+      const previewSrc = lessonOverrides.preview
+        ? path.resolve(dir, lessonOverrides.preview)
+        : findFirstPreview(searchDirs);
+      if (previewSrc && !exists(previewSrc)) {
+        console.error(`[sync] override not found for ${slug}/preview: ${previewSrc}`);
+        process.exit(1);
       }
-      filesOut.preview = previewReady ? `/library/${slug}/preview.png` : null;
+      sources.preview = previewSrc || sources.presentation;
+      sources.previewFromPdf = !previewSrc && Boolean(sources.presentation);
+      filesOut.preview = sources.preview
+        ? `/library/${slug}/preview.png`
+        : null;
 
       // post.txt тоже может лежать в parent
       const description =
@@ -374,7 +450,9 @@ function main() {
 
       lessons.push({
         slug,
-        title: cleanLesson,
+        // Редакторский title применяется после slug: исправление подписи не
+        // ломает существующие ссылки и сохранённое избранное.
+        title: displayTitle,
         section: sSlug,
         sectionTitle: sTitle,
         subject: meta.subject,
@@ -385,6 +463,7 @@ function main() {
         description,
         // free выставляется отдельно через free-list (см. data/free-lessons.json)
         free: false,
+        _sources: sources,
       });
     }
   }
@@ -424,10 +503,133 @@ function main() {
     .filter((s) => s.lessonCount > 0)
     .sort((a, b) => a.title.localeCompare(b.title, "ru"));
 
+  const catalogLessons = lessons.map((lesson) => {
+    const catalogLesson = { ...lesson };
+    delete catalogLesson._sources;
+    return catalogLesson;
+  });
+  const existingCatalog = exists(OUT_DATA)
+    ? JSON.parse(fs.readFileSync(OUT_DATA, "utf-8"))
+    : { lessons: [] };
+  const existingSlugs = new Set(
+    Array.isArray(existingCatalog.lessons)
+      ? existingCatalog.lessons.map((lesson) => lesson.slug)
+      : []
+  );
+  const nextSlugs = new Set(catalogLessons.map((lesson) => lesson.slug));
+  const added = [...nextSlugs].filter((slug) => !existingSlugs.has(slug));
+  const removedSlugs = [...existingSlugs].filter((slug) => !nextSlugs.has(slug));
+  const plan = {
+    sections,
+    lessons: catalogLessons,
+    sources: lessons.map((lesson) => ({
+      slug: lesson.slug,
+      presentation: sourceFingerprint(lesson._sources.presentation),
+      worksheet: sourceFingerprint(lesson._sources.worksheet),
+      answers: sourceFingerprint(lesson._sources.answers),
+      preview: sourceFingerprint(lesson._sources.preview),
+      previewFromPdf: lesson._sources.previewFromPdf,
+    })),
+  };
+  const planHash = crypto
+    .createHash("sha256")
+    .update(JSON.stringify(plan))
+    .digest("hex")
+    .slice(0, 16);
+
+  console.log(`[sync] plan: ${planHash}`);
+  console.log(`[sync] scanned/kept: ${lessonsScanned}/${lessons.length}`);
+  console.log(`[sync] sections: ${sections.length}`);
+  console.log(`[sync] catalog delta: +${added.length} / -${removedSlugs.length}`);
+  if (added.length) console.log(`[sync] add: ${added.join(", ")}`);
+  if (removedSlugs.length) console.log(`[sync] remove: ${removedSlugs.join(", ")}`);
+  if (skippedSections.length) {
+    console.log(`[sync] skipped unclassified sections: ${skippedSections.length}`);
+  }
+
+  const confirmCommand =
+    `npm run sync -- --apply --confirm=${planHash}` +
+    (INCLUDE_OTHER ? " --include-other" : "") +
+    (ACCEPT_CATALOG_DELTA ? " --accept-catalog-delta" : "");
+  const hasCatalogDelta = added.length > 0 || removedSlugs.length > 0;
+  if (!APPLY) {
+    console.log("[sync] dry run only; no files were changed.");
+    if (hasCatalogDelta && !ACCEPT_CATALOG_DELTA) {
+      console.error(
+        "[sync] apply is blocked: discovery would change catalog membership. " +
+          "Review/fix the source manifest first."
+      );
+      console.error(
+        "[sync] deliberate replacement additionally requires --accept-catalog-delta."
+      );
+    } else {
+      console.log(`[sync] review the plan, then run: ${confirmCommand}`);
+    }
+    return;
+  }
+  if (hasCatalogDelta && !ACCEPT_CATALOG_DELTA) {
+    console.error(
+      "[sync] stopped before writes: catalog delta requires --accept-catalog-delta."
+    );
+    process.exit(2);
+  }
+  if (CONFIRM !== planHash) {
+    console.error("[sync] confirmation is missing or does not match this plan.");
+    console.error(`[sync] run: ${confirmCommand}`);
+    process.exit(2);
+  }
+
+  // Проверяем генератор превью до первой записи, чтобы не получить полусинк.
+  const needsPdfRender = lessons.some((lesson) => {
+    if (!lesson._sources.previewFromPdf || !lesson._sources.preview) return false;
+    const dst = path.join(OUT_PUBLIC, lesson.slug, "preview.png");
+    return !isPreviewCurrent(lesson._sources.preview, dst);
+  });
+  if (needsPdfRender && !hasPdftoppm()) {
+    console.error(`[sync] pdftoppm is required; set PDFTOPPM_PATH (current: ${PDFTOPPM})`);
+    process.exit(1);
+  }
+
+  ensureDir(OUT_PUBLIC);
+  ensureDir(OUT_PRIVATE);
+  let copiedFiles = 0;
+  for (const lesson of lessons) {
+    const privateDir = path.join(OUT_PRIVATE, lesson.slug);
+    const publicDir = path.join(OUT_PUBLIC, lesson.slug);
+    for (const [field, fname] of [
+      ["presentation", "presentation.pdf"],
+      ["worksheet", "worksheet.pdf"],
+      ["answers", "answers.pdf"],
+    ]) {
+      const source = lesson._sources[field];
+      const destination = path.join(privateDir, fname);
+      if (source) {
+        if (copyIfChanged(source, destination)) copiedFiles++;
+      } else if (exists(destination)) {
+        fs.rmSync(destination, { force: true });
+      }
+    }
+
+    const previewSource = lesson._sources.preview;
+    const previewDestination = path.join(publicDir, "preview.png");
+    if (!previewSource) {
+      if (exists(previewDestination)) fs.rmSync(previewDestination, { force: true });
+    } else if (lesson._sources.previewFromPdf) {
+      const wasCurrent = isPreviewCurrent(previewSource, previewDestination);
+      if (!wasCurrent && !renderPdfFirstPage(previewSource, previewDestination)) {
+        console.error(`[sync] failed to render preview for ${lesson.slug}`);
+        process.exit(1);
+      }
+      if (!wasCurrent) copiedFiles++;
+    } else if (copyIfChanged(previewSource, previewDestination)) {
+      copiedFiles++;
+    }
+  }
+
   const catalog = {
     generatedAt: new Date().toISOString(),
     sections,
-    lessons,
+    lessons: catalogLessons,
     stats: {
       lessonsScanned,
       lessonsKept: lessons.length,
@@ -436,24 +638,26 @@ function main() {
     },
   };
 
-  fs.writeFileSync(OUT_DATA, JSON.stringify(catalog, null, 2), "utf-8");
+  writeJsonAtomic(OUT_DATA, catalog);
 
-  // чистим устаревшие папки в public/library/
+  // Чистим только после подтверждённого плана и успешной записи каталога.
   const liveSlugs = new Set(lessons.map((l) => l.slug));
   let removed = 0;
-  for (const entry of readDirSafe(OUT_PUBLIC)) {
-    const full = path.join(OUT_PUBLIC, entry);
-    if (isDir(full) && !liveSlugs.has(entry)) {
-      fs.rmSync(full, { recursive: true, force: true });
-      removed++;
+  for (const root of [OUT_PUBLIC, OUT_PRIVATE]) {
+    for (const entry of readDirSafe(root)) {
+      const full = path.join(root, entry);
+      if (isDir(full) && !liveSlugs.has(entry)) {
+        fs.rmSync(full, { recursive: true, force: true });
+        removed++;
+      }
     }
   }
+  const removedPublicPdfs = removePublicPdfs(OUT_PUBLIC);
 
-  console.log(`[sync] scanned: ${lessonsScanned}`);
-  console.log(`[sync] kept lessons: ${lessons.length}`);
-  console.log(`[sync] sections: ${sections.length}`);
+  console.log(`[sync] applied plan: ${planHash}`);
   console.log(`[sync] files copied: ${copiedFiles}`);
-  console.log(`[sync] stale dirs removed: ${removed}`);
+  console.log(`[sync] stale public/private dirs removed: ${removed}`);
+  console.log(`[sync] public PDFs removed: ${removedPublicPdfs}`);
   console.log(`[sync] free lessons: ${catalog.stats.freeLessons}`);
   console.log(`[sync] catalog → ${path.relative(ROOT, OUT_DATA)}`);
 }

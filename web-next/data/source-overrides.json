@@ -1,0 +1,40 @@
+{
+  "algebra-10-formuly-privedeniya": {
+    "title": "Формулы приведения",
+    "presentation": "output/pdf/formuly_privedeniya_presentation.pdf",
+    "worksheet": "output/pdf/formuly_privedeniya_worksheet.pdf"
+  },
+  "geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi": {
+    "title": "Угол между прямыми (готовые чертежи)"
+  },
+  "informatics-ege-15-zadanie-ege-informatika-ege-15-segments-presentation": {
+    "title": "15 задание ЕГЭ. Информатика · Отрезки"
+  },
+  "informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya": {
+    "title": "8 задание ЕГЭ. Информатика · Презентация к заданию"
+  },
+  "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-otrezki": {
+    "title": "Финальная подготовка к ЕГЭ (ФИПИ) · Урок 1. Отрезки"
+  },
+  "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-2": {
+    "title": "Финальная подготовка к ЕГЭ (ФИПИ) · Урок 2"
+  },
+  "math-ege-15-zadanie-ege-matematika-zadanie-ege": {
+    "title": "15 задание ЕГЭ. Математика"
+  },
+  "math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast": {
+    "title": "15 задание ЕГЭ. Математика · Показательные неравенства. Часть 1"
+  },
+  "math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom": {
+    "title": "Учусь онлайн. 18 задание ЕГЭ · Квадратные неравенства с параметром"
+  },
+  "math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom": {
+    "title": "Учусь онлайн. 18 задание ЕГЭ · Системы уравнений с параметром"
+  },
+  "math-oge-geometriya-oge-dokazatelstvo-1": {
+    "title": "Геометрия ОГЭ · Доказательство 1"
+  },
+  "math-oge-geometriya-oge-dokazatelstvo-2": {
+    "title": "Геометрия ОГЭ · Доказательство 2"
+  }
+}

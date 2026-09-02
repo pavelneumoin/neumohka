@@ -14,7 +14,7 @@ export function SiteFooter() {
             style={{ fontSize: 14, marginTop: 14, maxWidth: 280 }}
           >
             Готовые уроки математики и информатики для 8–11 классов от Павла
-            Неумоина. Подписка 590 ₽/мес.
+            Неумоина. Во время бета-тестирования каталог открыт бесплатно.
           </p>
         </div>
         <div>
@@ -22,9 +22,6 @@ export function SiteFooter() {
           <ul>
             <li>
               <Link href="/catalog">Каталог</Link>
-            </li>
-            <li>
-              <Link href="/pricing">Тарифы</Link>
             </li>
             <li>
               <Link href="/faq">Вопросы</Link>
@@ -35,11 +32,8 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h4>Документы</h4>
+          <h4>Помощь</h4>
           <ul>
-            <li>
-              <Link href="/oferta">Оферта</Link>
-            </li>
             <li>
               <Link href="/privacy">Политика</Link>
             </li>
@@ -53,9 +47,6 @@ export function SiteFooter() {
           <ul>
             <li>
               <a href="mailto:hello@neumoshka.ru">hello@neumoshka.ru</a>
-            </li>
-            <li>
-              <Link href="/contacts">Telegram</Link>
             </li>
           </ul>
         </div>

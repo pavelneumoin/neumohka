@@ -1,4 +1,7 @@
-export const metadata = { title: "Контакты — Неумошка" };
+export const metadata = {
+  title: "Контакты — Неумошка",
+  alternates: { canonical: "/contacts" },
+};
 
 export default function ContactsPage() {
   return (
@@ -15,20 +18,10 @@ export default function ContactsPage() {
             </p>
           </div>
           <div>
-            <div className="label">Telegram</div>
-            <p className="muted">@neumoshka (скоро).</p>
-          </div>
-          <div>
             <div className="label">Автор</div>
             <p>
               Павел Неумоин — учитель математики и информатики, автор всех
               материалов.
-            </p>
-          </div>
-          <div>
-            <div className="label">Реквизиты</div>
-            <p className="mono muted" style={{ fontSize: 13 }}>
-              Реквизиты будут опубликованы вместе с запуском платежей.
             </p>
           </div>
         </div>

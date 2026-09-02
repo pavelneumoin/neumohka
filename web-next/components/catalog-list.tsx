@@ -1,10 +1,11 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useMemo } from "react";
 import type { Lesson, Section } from "@/lib/catalog";
 import { LessonCard } from "@/components/lesson-card";
 import { CatalogFilters } from "@/components/catalog-filters";
+import { CatalogSearch } from "@/components/catalog-search";
+import { rankLessons } from "@/lib/search";
 
 export function CatalogList({
   lessons,
@@ -15,33 +16,41 @@ export function CatalogList({
 }) {
   const searchParams = useSearchParams();
   const activeSections = new Set(searchParams.getAll("s"));
-  const onlyFree = searchParams.get("free") === "1";
+  const query = searchParams.get("q") ?? "";
 
-  const filtered = useMemo(() => {
-    let out = lessons;
-    if (activeSections.size > 0)
-      out = out.filter((l) => activeSections.has(l.section));
-    if (onlyFree) out = out.filter((l) => l.free);
-    return out;
-  }, [lessons, activeSections, onlyFree]);
+  let filtered = lessons;
+  if (activeSections.size > 0)
+    filtered = filtered.filter((lesson) => activeSections.has(lesson.section));
+  filtered = rankLessons(filtered, query);
 
   return (
-    <div className="catalog-layout">
-      <CatalogFilters sections={sections} totalCount={filtered.length} />
-      {filtered.length === 0 ? (
-        <div className="card" style={{ textAlign: "center", padding: 60 }}>
-          <h3>Ничего не нашлось</h3>
-          <p className="muted" style={{ marginTop: 8, fontSize: 15 }}>
-            Попробуйте снять фильтры или выбрать другой раздел.
-          </p>
+    <div>
+      <CatalogSearch
+        totalCount={filtered.length}
+        initialQuery={query}
+      />
+      <div className="catalog-layout">
+        <CatalogFilters sections={sections} />
+        <div id="catalog-results" data-search-results>
+          {filtered.length === 0 ? (
+            <div className="card catalog-empty">
+              <h3>
+                {query ? `По запросу «${query}» ничего не нашлось` : "Ничего не нашлось"}
+              </h3>
+              <p className="muted">
+                Попробуйте другое слово, уберите номер задания или снимите
+                фильтры разделов.
+              </p>
+            </div>
+          ) : (
+            <div className="lesson-grid">
+              {filtered.map((lesson) => (
+                <LessonCard key={lesson.slug} lesson={lesson} />
+              ))}
+            </div>
+          )}
         </div>
-      ) : (
-        <div className="lesson-grid">
-          {filtered.map((l) => (
-            <LessonCard key={l.slug} lesson={l} />
-          ))}
-        </div>
-      )}
+      </div>
     </div>
   );
 }

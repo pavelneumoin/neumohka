@@ -6,23 +6,21 @@ import type { Section } from "@/lib/catalog";
 
 type Props = {
   sections: Section[];
-  totalCount: number;
 };
 
-export function CatalogFilters({ sections, totalCount }: Props) {
+export function CatalogFilters({ sections }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const activeSections = new Set(searchParams.getAll("s"));
-  const onlyFree = searchParams.get("free") === "1";
 
   const update = useCallback(
     (mutate: (params: URLSearchParams) => void) => {
       const params = new URLSearchParams(searchParams.toString());
       mutate(params);
       const qs = params.toString();
-      router.push(qs ? `${pathname}?${qs}` : pathname);
+      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
     },
     [router, pathname, searchParams]
   );
@@ -38,19 +36,14 @@ export function CatalogFilters({ sections, totalCount }: Props) {
     });
   };
 
-  const toggleFree = () => {
-    update((p) => {
-      if (onlyFree) p.delete("free");
-      else p.set("free", "1");
-    });
+  const reset = () => {
+    update((params) => params.delete("s"));
   };
 
-  const reset = () => router.push(pathname);
-
-  const hasFilters = activeSections.size > 0 || onlyFree;
+  const hasFilters = activeSections.size > 0;
 
   return (
-    <aside>
+    <aside aria-label="Фильтры каталога">
       <div className="filter-group">
         <h4>Раздел</h4>
         <div className="filter-list">
@@ -72,32 +65,11 @@ export function CatalogFilters({ sections, totalCount }: Props) {
         </div>
       </div>
       <div className="filter-group">
-        <h4>Доступ</h4>
-        <div className="filter-list">
-          <label className="checkbox">
-            <input type="checkbox" checked={onlyFree} onChange={toggleFree} />
-            <span>Только бесплатные</span>
-          </label>
-        </div>
-      </div>
-      <div className="filter-group">
-        <div
-          className="row-between"
-          style={{ fontSize: 13 }}
-        >
-          <span className="muted">
-            показано: {totalCount}
-          </span>
-          {hasFilters && (
-            <button
-              className="btn ghost sm"
-              onClick={reset}
-              type="button"
-            >
-              Сбросить
-            </button>
-          )}
-        </div>
+        {hasFilters && (
+          <button className="btn ghost sm block" onClick={reset} type="button">
+            Сбросить разделы
+          </button>
+        )}
       </div>
     </aside>
   );

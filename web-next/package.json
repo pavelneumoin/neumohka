@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
-    "start": "next start",
+    "postbuild": "node scripts/prepare-standalone.mjs",
+    "start": "node .next/standalone/server.js",
     "lint": "eslint",
-    "sync": "node scripts/sync-library.mjs",
-    "prebuild": "node scripts/sync-library.mjs"
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck",
+    "test:data": "node scripts/verify-library.mjs",
+    "test:search": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/test-search.mjs",
+    "test:auth-core": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/test-auth-core.mjs",
+    "test:integration": "node scripts/integration-test.mjs",
+    "test:smoke": "node scripts/smoke-test.mjs",
+    "sync": "node scripts/sync-library.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

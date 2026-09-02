@@ -37,6 +37,9 @@ yarn-error.log*
 # JSON-store (sessions, users, unlocks) — runtime data, не в git
 /data/store/
 
+# Защищённые учебные файлы доставляются отдельно и не должны попадать в Git.
+/private/
+
 # vercel
 .vercel
 

@@ -1,31 +1,37 @@
-import Link from "next/link";
+import { redirect } from "next/navigation";
+import { AuthForm } from "@/components/auth-form";
+import { getCurrentUser } from "@/lib/auth";
+import { safeNextPath } from "@/lib/navigation";
 
-export const metadata = { title: "Подписка — Неумошка" };
+export const metadata = {
+  title: "Регистрация — Неумошка",
+  robots: { index: false, follow: false },
+};
 
-export default function SignupPage() {
+type SearchParams = Promise<{ next?: string | string[] }>;
+
+export default async function SignupPage({ searchParams }: { searchParams: SearchParams }) {
+  const params = await searchParams;
+  const rawNext = Array.isArray(params.next) ? params.next[0] : params.next;
+  const nextPath = safeNextPath(rawNext);
+  if (await getCurrentUser()) redirect(nextPath);
+
   return (
-    <section className="section">
-      <div className="wrap-narrow" style={{ maxWidth: 480 }}>
-        <span className="eyebrow">подписка</span>
-        <h1 style={{ marginTop: 12, fontSize: 36 }}>
-          Платный доступ скоро откроется
-        </h1>
-        <p className="muted" style={{ marginTop: 12, fontSize: 17 }}>
-          Сейчас идёт интеграция с ЮKassa. До запуска можно бесплатно скачивать
-          уроки из открытого раздела.
-        </p>
-        <div className="col" style={{ marginTop: 32, gap: 12 }}>
-          <Link href="/catalog?free=1" className="btn primary lg">
-            Открыть бесплатный раздел →
-          </Link>
-          <Link href="/pricing" className="btn lg">
-            Посмотреть тарифы
-          </Link>
+    <section className="auth-page section">
+      <div className="auth-shell">
+        <div className="auth-copy">
+          <span className="eyebrow">новый кабинет</span>
+          <h1>Своя полка с готовыми уроками.</h1>
+          <p className="lead">
+            Создайте кабинет, отмечайте нужные материалы звездой и собирайте
+            личную подборку для ближайших занятий.
+          </p>
+          <p className="auth-copy-note">
+            Все материалы каталога по-прежнему можно просматривать без
+            регистрации. Кабинет нужен только для персональных функций.
+          </p>
         </div>
-        <p className="mono muted" style={{ marginTop: 32, fontSize: 12 }}>
-          оставьте почту: <a href="mailto:hello@neumoshka.ru">hello@neumoshka.ru</a>{" "}
-          — пришлю персональное приглашение в день запуска
-        </p>
+        <AuthForm mode="register" nextPath={nextPath} />
       </div>
     </section>
   );

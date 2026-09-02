@@ -61,8 +61,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/algebra-10-arktangens-i-arkkotangens/presentation.pdf",
-        "worksheet": "/library/algebra-10-arktangens-i-arkkotangens/worksheet.pdf",
+        "presentation": "/api/file/algebra-10-arktangens-i-arkkotangens/presentation",
+        "worksheet": "/api/file/algebra-10-arktangens-i-arkkotangens/worksheet",
         "answers": null,
         "preview": "/library/algebra-10-arktangens-i-arkkotangens/preview.png"
       },
@@ -79,8 +79,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/algebra-10-grafik-arktangensa-i-arkkotangensa/presentation.pdf",
-        "worksheet": "/library/algebra-10-grafik-arktangensa-i-arkkotangensa/worksheet.pdf",
+        "presentation": "/api/file/algebra-10-grafik-arktangensa-i-arkkotangensa/presentation",
+        "worksheet": "/api/file/algebra-10-grafik-arktangensa-i-arkkotangensa/worksheet",
         "answers": null,
         "preview": "/library/algebra-10-grafik-arktangensa-i-arkkotangensa/preview.png"
       },
@@ -99,7 +99,7 @@
         "10_1. График функции y=cosx"
       ],
       "files": {
-        "presentation": "/library/algebra-10-grafik-funkcii-ycosx/presentation.pdf",
+        "presentation": "/api/file/algebra-10-grafik-funkcii-ycosx/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/algebra-10-grafik-funkcii-ycosx/preview.png"
@@ -117,8 +117,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/algebra-10-grafik-funkcii-ycosx-latex/presentation.pdf",
-        "worksheet": "/library/algebra-10-grafik-funkcii-ycosx-latex/worksheet.pdf",
+        "presentation": "/api/file/algebra-10-grafik-funkcii-ycosx-latex/presentation",
+        "worksheet": "/api/file/algebra-10-grafik-funkcii-ycosx-latex/worksheet",
         "answers": null,
         "preview": "/library/algebra-10-grafik-funkcii-ycosx-latex/preview.png"
       },
@@ -137,7 +137,7 @@
         "10.2. График функции y=tgx"
       ],
       "files": {
-        "presentation": "/library/algebra-10-grafik-funkcii-ytgx/presentation.pdf",
+        "presentation": "/api/file/algebra-10-grafik-funkcii-ytgx/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/algebra-10-grafik-funkcii-ytgx/preview.png"
@@ -157,7 +157,7 @@
         "11. Простейшие тригонометрические уравнения"
       ],
       "files": {
-        "presentation": "/library/algebra-10-prosteyshie-trigonometricheskie-uravneniya/presentation.pdf",
+        "presentation": "/api/file/algebra-10-prosteyshie-trigonometricheskie-uravneniya/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/algebra-10-prosteyshie-trigonometricheskie-uravneniya/preview.png"
@@ -175,8 +175,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/algebra-10-reshenie-uravneniy-chast-2/presentation.pdf",
-        "worksheet": "/library/algebra-10-reshenie-uravneniy-chast-2/worksheet.pdf",
+        "presentation": "/api/file/algebra-10-reshenie-uravneniy-chast-2/presentation",
+        "worksheet": "/api/file/algebra-10-reshenie-uravneniy-chast-2/worksheet",
         "answers": null,
         "preview": "/library/algebra-10-reshenie-uravneniy-chast-2/preview.png"
       },
@@ -193,8 +193,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/algebra-10-reshenie-uravneniy-chast-3/presentation.pdf",
-        "worksheet": "/library/algebra-10-reshenie-uravneniy-chast-3/worksheet.pdf",
+        "presentation": "/api/file/algebra-10-reshenie-uravneniy-chast-3/presentation",
+        "worksheet": "/api/file/algebra-10-reshenie-uravneniy-chast-3/worksheet",
         "answers": null,
         "preview": "/library/algebra-10-reshenie-uravneniy-chast-3/preview.png"
       },
@@ -213,7 +213,7 @@
         "7. Свойства тангенса и котангенса"
       ],
       "files": {
-        "presentation": "/library/algebra-10-svoystva-tangensa-i-kotangensa/presentation.pdf",
+        "presentation": "/api/file/algebra-10-svoystva-tangensa-i-kotangensa/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/algebra-10-svoystva-tangensa-i-kotangensa/preview.png"
@@ -233,7 +233,7 @@
         "8. Свойства тангенса и котангенса. Часть 2"
       ],
       "files": {
-        "presentation": "/library/algebra-10-svoystva-tangensa-i-kotangensa-chast-2/presentation.pdf",
+        "presentation": "/api/file/algebra-10-svoystva-tangensa-i-kotangensa-chast-2/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/algebra-10-svoystva-tangensa-i-kotangensa-chast-2/preview.png"
@@ -251,8 +251,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/algebra-10-sr-svoystva-sinusa-i-kosinusa/presentation.pdf",
-        "worksheet": "/library/algebra-10-sr-svoystva-sinusa-i-kosinusa/worksheet.pdf",
+        "presentation": "/api/file/algebra-10-sr-svoystva-sinusa-i-kosinusa/presentation",
+        "worksheet": "/api/file/algebra-10-sr-svoystva-sinusa-i-kosinusa/worksheet",
         "answers": null,
         "preview": "/library/algebra-10-sr-svoystva-sinusa-i-kosinusa/preview.png"
       },
@@ -269,7 +269,7 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/algebra-10-tangens-i-kotangens/presentation.pdf",
+        "presentation": "/api/file/algebra-10-tangens-i-kotangens/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/algebra-10-tangens-i-kotangens/preview.png"
@@ -289,7 +289,7 @@
         "9. Тригонометрические тождества"
       ],
       "files": {
-        "presentation": "/library/algebra-10-trigonometricheskie-tozhdestva/presentation.pdf",
+        "presentation": "/api/file/algebra-10-trigonometricheskie-tozhdestva/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/algebra-10-trigonometricheskie-tozhdestva/preview.png"
@@ -299,7 +299,7 @@
     },
     {
       "slug": "algebra-10-formuly-privedeniya",
-      "title": "Формулы Приведения",
+      "title": "Формулы приведения",
       "section": "algebra-10",
       "sectionTitle": "Алгебра, 10 класс",
       "subject": "algebra",
@@ -307,8 +307,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/algebra-10-formuly-privedeniya/presentation.pdf",
-        "worksheet": "/library/algebra-10-formuly-privedeniya/worksheet.pdf",
+        "presentation": "/api/file/algebra-10-formuly-privedeniya/presentation",
+        "worksheet": "/api/file/algebra-10-formuly-privedeniya/worksheet",
         "answers": null,
         "preview": "/library/algebra-10-formuly-privedeniya/preview.png"
       },
@@ -317,7 +317,7 @@
     },
     {
       "slug": "geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi",
-      "title": "Угол между прямыми(готовые чертежи)",
+      "title": "Угол между прямыми (готовые чертежи)",
       "section": "geometry-10",
       "sectionTitle": "Геометрия, 10 класс",
       "subject": "geometry",
@@ -325,8 +325,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi/presentation.pdf",
-        "worksheet": "/library/geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi/worksheet.pdf",
+        "presentation": "/api/file/geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi/presentation",
+        "worksheet": "/api/file/geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi/worksheet",
         "answers": null,
         "preview": "/library/geometry-10-ugol-mezhdu-pryamymigotovye-chertezhi/preview.png"
       },
@@ -343,8 +343,8 @@
       "exam": null,
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/informatics-10-cikl-for/presentation.pdf",
-        "worksheet": "/library/informatics-10-cikl-for/worksheet.pdf",
+        "presentation": "/api/file/informatics-10-cikl-for/presentation",
+        "worksheet": "/api/file/informatics-10-cikl-for/worksheet",
         "answers": null,
         "preview": "/library/informatics-10-cikl-for/preview.png"
       },
@@ -361,8 +361,8 @@
       "exam": "ege",
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/informatics-ege-1-zadanie-ege-informatika/presentation.pdf",
-        "worksheet": "/library/informatics-ege-1-zadanie-ege-informatika/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-1-zadanie-ege-informatika/presentation",
+        "worksheet": "/api/file/informatics-ege-1-zadanie-ege-informatika/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-1-zadanie-ege-informatika/preview.png"
       },
@@ -382,8 +382,8 @@
         "11 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie/presentation",
+        "worksheet": "/api/file/informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-11-zadanie-ege-informatika-itogovoe-povtorenie/preview.png"
       },
@@ -402,8 +402,8 @@
         "13 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie/presentation",
+        "worksheet": "/api/file/informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-13-zadanie-ege-informatika-itogovoe-povtorenie/preview.png"
       },
@@ -422,8 +422,8 @@
         "13 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-13-zadanie-ege-informatika-fipi/presentation.pdf",
-        "worksheet": "/library/informatics-ege-13-zadanie-ege-informatika-fipi/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-13-zadanie-ege-informatika-fipi/presentation",
+        "worksheet": "/api/file/informatics-ege-13-zadanie-ege-informatika-fipi/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-13-zadanie-ege-informatika-fipi/preview.png"
       },
@@ -442,8 +442,8 @@
         "14 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie/presentation",
+        "worksheet": "/api/file/informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-14-zadanie-ege-informatika-itogovoe-zakreplenie/preview.png"
       },
@@ -452,7 +452,7 @@
     },
     {
       "slug": "informatics-ege-15-zadanie-ege-informatika-ege-15-segments-presentation",
-      "title": "15 задание ЕГЭ. Информатика · EGE_15_Segments_Presentation",
+      "title": "15 задание ЕГЭ. Информатика · Отрезки",
       "section": "informatics-ege",
       "sectionTitle": "Информатика, ЕГЭ",
       "subject": "informatics",
@@ -463,7 +463,7 @@
         "2 тип задач"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-15-zadanie-ege-informatika-ege-15-segments-presentation/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-15-zadanie-ege-informatika-ege-15-segments-presentation/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-15-zadanie-ege-informatika-ege-15-segments-presentation/preview.png"
@@ -483,8 +483,8 @@
         "16 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie/presentation",
+        "worksheet": "/api/file/informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-16-zadanie-ege-informatika-itogovoe-povtorenie/preview.png"
       },
@@ -503,8 +503,8 @@
         "2 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie/presentation",
+        "worksheet": "/api/file/informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-2-zadanie-ege-informatika-2-zadanie-ege-itogovoe-povtorenie/preview.png"
       },
@@ -523,8 +523,8 @@
         "23 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie/presentation",
+        "worksheet": "/api/file/informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-23-zadanie-ege-informatika-itogovoe-povtorenie/preview.png"
       },
@@ -543,8 +543,8 @@
         "4 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-4-zadanie-ege-informatika-1-urok/presentation.pdf",
-        "worksheet": "/library/informatics-ege-4-zadanie-ege-informatika-1-urok/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-4-zadanie-ege-informatika-1-urok/presentation",
+        "worksheet": "/api/file/informatics-ege-4-zadanie-ege-informatika-1-urok/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-4-zadanie-ege-informatika-1-urok/preview.png"
       },
@@ -563,8 +563,8 @@
         "4 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-4-zadanie-ege-informatika-2-urok/presentation.pdf",
-        "worksheet": "/library/informatics-ege-4-zadanie-ege-informatika-2-urok/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-4-zadanie-ege-informatika-2-urok/presentation",
+        "worksheet": "/api/file/informatics-ege-4-zadanie-ege-informatika-2-urok/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-4-zadanie-ege-informatika-2-urok/preview.png"
       },
@@ -583,8 +583,8 @@
         "4 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie/presentation",
+        "worksheet": "/api/file/informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-4-zadanie-ege-informatika-3-urok-itogovoe-povtorenie/preview.png"
       },
@@ -603,7 +603,7 @@
         "5 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-5-zadanie-ege-informatika-5-zadanie-ege-itogovoe-povtorenie/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-5-zadanie-ege-informatika-5-zadanie-ege-itogovoe-povtorenie/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-5-zadanie-ege-informatika-5-zadanie-ege-itogovoe-povtorenie/preview.png"
@@ -621,8 +621,8 @@
       "exam": "ege",
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/informatics-ege-7-zadanie-ege-itogovoe-povtorenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-7-zadanie-ege-itogovoe-povtorenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-7-zadanie-ege-itogovoe-povtorenie/presentation",
+        "worksheet": "/api/file/informatics-ege-7-zadanie-ege-itogovoe-povtorenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-7-zadanie-ege-itogovoe-povtorenie/preview.png"
       },
@@ -641,8 +641,8 @@
         "8 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie/presentation.pdf",
-        "worksheet": "/library/informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie/presentation",
+        "worksheet": "/api/file/informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-8-zadanie-ege-informatika-8-zadanie-ege-itogovoe-zakreplenie/preview.png"
       },
@@ -651,7 +651,7 @@
     },
     {
       "slug": "informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya",
-      "title": "8 задание ЕГЭ. Информатика · Задание_Презентация",
+      "title": "8 задание ЕГЭ. Информатика · Презентация к заданию",
       "section": "informatics-ege",
       "sectionTitle": "Информатика, ЕГЭ",
       "subject": "informatics",
@@ -661,8 +661,8 @@
         "8 задание ЕГЭ. Информатика"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya/presentation.pdf",
-        "worksheet": "/library/informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya/presentation",
+        "worksheet": "/api/file/informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-8-zadanie-ege-informatika-zadanie-prezentaciya/preview.png"
       },
@@ -679,8 +679,8 @@
       "exam": "ege",
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/informatics-ege-9-zadanie-ege-informatika/presentation.pdf",
-        "worksheet": "/library/informatics-ege-9-zadanie-ege-informatika/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-9-zadanie-ege-informatika/presentation",
+        "worksheet": "/api/file/informatics-ege-9-zadanie-ege-informatika/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-9-zadanie-ege-informatika/preview.png"
       },
@@ -699,8 +699,8 @@
         "Финальная подготовка к ЕГЭ(ФИПИ)"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege/presentation.pdf",
-        "worksheet": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege/presentation",
+        "worksheet": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-23-ege/preview.png"
       },
@@ -719,8 +719,8 @@
         "Финальная подготовка к ЕГЭ(ФИПИ)"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege/presentation.pdf",
-        "worksheet": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege/presentation",
+        "worksheet": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-7-ege/preview.png"
       },
@@ -739,8 +739,8 @@
         "Финальная подготовка к ЕГЭ(ФИПИ)"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege/presentation.pdf",
-        "worksheet": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege/worksheet.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege/presentation",
+        "worksheet": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege/worksheet",
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-zadanie-8-ege/preview.png"
       },
@@ -760,7 +760,7 @@
         "Задание 11 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1/preview.png"
@@ -781,7 +781,7 @@
         "Задание 25 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-maski/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-maski/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-maski/preview.png"
@@ -802,7 +802,7 @@
         "Задание 11 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2/preview.png"
@@ -823,7 +823,7 @@
         "Задание 25 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-deliteli/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-deliteli/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-deliteli/preview.png"
@@ -844,7 +844,7 @@
         "Задание 25 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-3-deliteli/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-3-deliteli/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-3-deliteli/preview.png"
@@ -865,7 +865,7 @@
         "Задание 25 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-4-deliteli/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-4-deliteli/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-4-deliteli/preview.png"
@@ -886,7 +886,7 @@
         "Задание 25 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-5-deliteli/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-5-deliteli/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-5-deliteli/preview.png"
@@ -907,7 +907,7 @@
         "Задание 25 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-6-deliteli/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-6-deliteli/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-6-deliteli/preview.png"
@@ -917,7 +917,7 @@
     },
     {
       "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-otrezki",
-      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок_1_Отрезки",
+      "title": "Финальная подготовка к ЕГЭ (ФИПИ) · Урок 1. Отрезки",
       "section": "informatics-ege",
       "sectionTitle": "Информатика, ЕГЭ",
       "subject": "informatics",
@@ -929,7 +929,7 @@
         "Урок_1_Отрезки"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-otrezki/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-otrezki/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-1-otrezki/preview.png"
@@ -939,7 +939,7 @@
     },
     {
       "slug": "informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-2",
-      "title": "Финальная подготовка к ЕГЭ(ФИПИ) · Урок_2",
+      "title": "Финальная подготовка к ЕГЭ (ФИПИ) · Урок 2",
       "section": "informatics-ege",
       "sectionTitle": "Информатика, ЕГЭ",
       "subject": "informatics",
@@ -950,7 +950,7 @@
         "Задание 17 ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-2/presentation.pdf",
+        "presentation": "/api/file/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-2/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/informatics-ege-finalnaya-podgotovka-k-egefipi-urok-2-2/preview.png"
@@ -970,8 +970,8 @@
         "12 задание ЕГЭ. Математика"
       ],
       "files": {
-        "presentation": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1/presentation.pdf",
-        "worksheet": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1/worksheet.pdf",
+        "presentation": "/api/file/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1/presentation",
+        "worksheet": "/api/file/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1/worksheet",
         "answers": null,
         "preview": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-1/preview.png"
       },
@@ -990,8 +990,8 @@
         "12 задание ЕГЭ. Математика"
       ],
       "files": {
-        "presentation": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2/presentation.pdf",
-        "worksheet": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2/worksheet.pdf",
+        "presentation": "/api/file/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2/presentation",
+        "worksheet": "/api/file/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2/worksheet",
         "answers": null,
         "preview": "/library/math-ege-12-zadanie-ege-matematika-12-zadanie-ege-matematika-final-chast-2/preview.png"
       },
@@ -1010,8 +1010,8 @@
         "14 задание ЕГЭ. Математика"
       ],
       "files": {
-        "presentation": "/library/math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami/presentation.pdf",
-        "worksheet": "/library/math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami/worksheet.pdf",
+        "presentation": "/api/file/math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami/presentation",
+        "worksheet": "/api/file/math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami/worksheet",
         "answers": null,
         "preview": "/library/math-ege-14-zadanie-ege-matematika-ugol-mezhdu-ploskostyami/preview.png"
       },
@@ -1020,7 +1020,7 @@
     },
     {
       "slug": "math-ege-15-zadanie-ege-matematika-zadanie-ege",
-      "title": "15 задание ЕГЭ. Математика · задание_егэ",
+      "title": "15 задание ЕГЭ. Математика",
       "section": "math-ege",
       "sectionTitle": "Математика, ЕГЭ",
       "subject": "math",
@@ -1030,8 +1030,8 @@
         "15 задание ЕГЭ. Математика"
       ],
       "files": {
-        "presentation": "/library/math-ege-15-zadanie-ege-matematika-zadanie-ege/presentation.pdf",
-        "worksheet": "/library/math-ege-15-zadanie-ege-matematika-zadanie-ege/worksheet.pdf",
+        "presentation": "/api/file/math-ege-15-zadanie-ege-matematika-zadanie-ege/presentation",
+        "worksheet": "/api/file/math-ege-15-zadanie-ege-matematika-zadanie-ege/worksheet",
         "answers": null,
         "preview": "/library/math-ege-15-zadanie-ege-matematika-zadanie-ege/preview.png"
       },
@@ -1040,7 +1040,7 @@
     },
     {
       "slug": "math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast",
-      "title": "15 задание ЕГЭ. Математика · Показательные неравенаства. 1 часть",
+      "title": "15 задание ЕГЭ. Математика · Показательные неравенства. Часть 1",
       "section": "math-ege",
       "sectionTitle": "Математика, ЕГЭ",
       "subject": "math",
@@ -1050,8 +1050,8 @@
         "15 задание ЕГЭ. Математика"
       ],
       "files": {
-        "presentation": "/library/math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast/presentation.pdf",
-        "worksheet": "/library/math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast/worksheet.pdf",
+        "presentation": "/api/file/math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast/presentation",
+        "worksheet": "/api/file/math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast/worksheet",
         "answers": null,
         "preview": "/library/math-ege-15-zadanie-ege-matematika-pokazatelnye-neravenastva-1-chast/preview.png"
       },
@@ -1068,7 +1068,7 @@
       "exam": "ege",
       "breadcrumbs": [],
       "files": {
-        "presentation": "/library/math-ege-19-zadanie-ege/presentation.pdf",
+        "presentation": "/api/file/math-ege-19-zadanie-ege/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/math-ege-19-zadanie-ege/preview.png"
@@ -1078,7 +1078,7 @@
     },
     {
       "slug": "math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom",
-      "title": "Учусь_онлайн. 18 задание ЕГЭ · Квадратные неравенства с параметром",
+      "title": "Учусь онлайн. 18 задание ЕГЭ · Квадратные неравенства с параметром",
       "section": "math-ege",
       "sectionTitle": "Математика, ЕГЭ",
       "subject": "math",
@@ -1088,8 +1088,8 @@
         "Учусь_онлайн. 18 задание ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom/presentation.pdf",
-        "worksheet": "/library/math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom/worksheet.pdf",
+        "presentation": "/api/file/math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom/presentation",
+        "worksheet": "/api/file/math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom/worksheet",
         "answers": null,
         "preview": "/library/math-ege-uchus-onlayn-18-zadanie-ege-kvadratnye-neravenstva-s-parametrom/preview.png"
       },
@@ -1098,7 +1098,7 @@
     },
     {
       "slug": "math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom",
-      "title": "Учусь_онлайн. 18 задание ЕГЭ · Системы уравнений с параметром",
+      "title": "Учусь онлайн. 18 задание ЕГЭ · Системы уравнений с параметром",
       "section": "math-ege",
       "sectionTitle": "Математика, ЕГЭ",
       "subject": "math",
@@ -1108,8 +1108,8 @@
         "Учусь_онлайн. 18 задание ЕГЭ"
       ],
       "files": {
-        "presentation": "/library/math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom/presentation.pdf",
-        "worksheet": "/library/math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom/worksheet.pdf",
+        "presentation": "/api/file/math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom/presentation",
+        "worksheet": "/api/file/math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom/worksheet",
         "answers": null,
         "preview": "/library/math-ege-uchus-onlayn-18-zadanie-ege-sistemy-uravneniy-s-parametrom/preview.png"
       },
@@ -1129,8 +1129,8 @@
         "2. 20 задание ОГЭ"
       ],
       "files": {
-        "presentation": "/library/math-oge-algebra-oge-1-urok/presentation.pdf",
-        "worksheet": "/library/math-oge-algebra-oge-1-urok/worksheet.pdf",
+        "presentation": "/api/file/math-oge-algebra-oge-1-urok/presentation",
+        "worksheet": "/api/file/math-oge-algebra-oge-1-urok/worksheet",
         "answers": null,
         "preview": "/library/math-oge-algebra-oge-1-urok/preview.png"
       },
@@ -1150,8 +1150,8 @@
         "2. 20 задание ОГЭ"
       ],
       "files": {
-        "presentation": "/library/math-oge-algebra-oge-2-urok/presentation.pdf",
-        "worksheet": "/library/math-oge-algebra-oge-2-urok/worksheet.pdf",
+        "presentation": "/api/file/math-oge-algebra-oge-2-urok/presentation",
+        "worksheet": "/api/file/math-oge-algebra-oge-2-urok/worksheet",
         "answers": null,
         "preview": "/library/math-oge-algebra-oge-2-urok/preview.png"
       },
@@ -1171,8 +1171,8 @@
         "2. 20 задание ОГЭ"
       ],
       "files": {
-        "presentation": "/library/math-oge-algebra-oge-3-urok/presentation.pdf",
-        "worksheet": "/library/math-oge-algebra-oge-3-urok/worksheet.pdf",
+        "presentation": "/api/file/math-oge-algebra-oge-3-urok/presentation",
+        "worksheet": "/api/file/math-oge-algebra-oge-3-urok/worksheet",
         "answers": null,
         "preview": "/library/math-oge-algebra-oge-3-urok/preview.png"
       },
@@ -1192,8 +1192,8 @@
         "2. 20 задание ОГЭ"
       ],
       "files": {
-        "presentation": "/library/math-oge-algebra-oge-gotovye-materialy/presentation.pdf",
-        "worksheet": "/library/math-oge-algebra-oge-gotovye-materialy/worksheet.pdf",
+        "presentation": "/api/file/math-oge-algebra-oge-gotovye-materialy/presentation",
+        "worksheet": "/api/file/math-oge-algebra-oge-gotovye-materialy/worksheet",
         "answers": null,
         "preview": "/library/math-oge-algebra-oge-gotovye-materialy/preview.png"
       },
@@ -1214,7 +1214,7 @@
         "урок 4"
       ],
       "files": {
-        "presentation": "/library/math-oge-algebra-oge-urok-4/presentation.pdf",
+        "presentation": "/api/file/math-oge-algebra-oge-urok-4/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/math-oge-algebra-oge-urok-4/preview.png"
@@ -1224,7 +1224,7 @@
     },
     {
       "slug": "math-oge-geometriya-oge-dokazatelstvo-1",
-      "title": "Геометрия ОГЭ · Доказательство_1",
+      "title": "Геометрия ОГЭ · Доказательство 1",
       "section": "math-oge",
       "sectionTitle": "Математика, ОГЭ",
       "subject": "math",
@@ -1234,8 +1234,8 @@
         "Геометрия ОГЭ"
       ],
       "files": {
-        "presentation": "/library/math-oge-geometriya-oge-dokazatelstvo-1/presentation.pdf",
-        "worksheet": "/library/math-oge-geometriya-oge-dokazatelstvo-1/worksheet.pdf",
+        "presentation": "/api/file/math-oge-geometriya-oge-dokazatelstvo-1/presentation",
+        "worksheet": "/api/file/math-oge-geometriya-oge-dokazatelstvo-1/worksheet",
         "answers": null,
         "preview": "/library/math-oge-geometriya-oge-dokazatelstvo-1/preview.png"
       },
@@ -1244,7 +1244,7 @@
     },
     {
       "slug": "math-oge-geometriya-oge-dokazatelstvo-2",
-      "title": "Геометрия ОГЭ · Доказательство_2",
+      "title": "Геометрия ОГЭ · Доказательство 2",
       "section": "math-oge",
       "sectionTitle": "Математика, ОГЭ",
       "subject": "math",
@@ -1254,8 +1254,8 @@
         "Геометрия ОГЭ"
       ],
       "files": {
-        "presentation": "/library/math-oge-geometriya-oge-dokazatelstvo-2/presentation.pdf",
-        "worksheet": "/library/math-oge-geometriya-oge-dokazatelstvo-2/worksheet.pdf",
+        "presentation": "/api/file/math-oge-geometriya-oge-dokazatelstvo-2/presentation",
+        "worksheet": "/api/file/math-oge-geometriya-oge-dokazatelstvo-2/worksheet",
         "answers": null,
         "preview": "/library/math-oge-geometriya-oge-dokazatelstvo-2/preview.png"
       },
@@ -1274,7 +1274,7 @@
         "Геометрия ОГЭ"
       ],
       "files": {
-        "presentation": "/library/math-oge-geometriya-oge-priznaki-podobiya-treugolnikov/presentation.pdf",
+        "presentation": "/api/file/math-oge-geometriya-oge-priznaki-podobiya-treugolnikov/presentation",
         "worksheet": null,
         "answers": null,
         "preview": "/library/math-oge-geometriya-oge-priznaki-podobiya-treugolnikov/preview.png"
